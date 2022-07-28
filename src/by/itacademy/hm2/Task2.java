@@ -11,7 +11,7 @@ public class Task2 {
         num2 = enterFromScanner("Введите второе целое число : ");
 
         num3 = sumAndMultiplicationOfNumbers(num1, num2);
-        System.out.printf("Суммирувание суммы и произведения чисел %d и %d состовляет : %d", num1, num2, num3);
+        System.out.printf("Суммирование суммы и произведения чисел %d и %d состовляет : %d", num1, num2, num3);
     }
 
     public static int enterFromScanner(String message) {
