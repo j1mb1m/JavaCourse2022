@@ -121,7 +121,7 @@ public class Task4 {
         long l = (long) f;
         double d = f;
 
-        System.out.println("Convert long \"" + f + "\"  to ");
+        System.out.println("Convert float \"" + f + "\"  to ");
         System.out.println("byte : " + b);
         System.out.println("char : " + c);
         System.out.println("short : " + s);
@@ -140,7 +140,7 @@ public class Task4 {
         long l = (long) d;
         float f = (float) d;
 
-        System.out.println("Convert long \"" + d + "\"  to ");
+        System.out.println("Convert double \"" + d + "\"  to ");
         System.out.println("byte : " + b);
         System.out.println("char : " + c);
         System.out.println("short : " + s);
