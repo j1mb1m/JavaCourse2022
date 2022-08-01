@@ -16,7 +16,7 @@ public class Task5 {
             if(num < 15) System.out.println("Первая четверть");
             else  if(num < 30) System.out.println("Вторая четверть");
             else  if(num < 45) System.out.println("Третья четверть");
-            else  System.out.println("четвертая четверть");
+            else  System.out.println("Четвертая четверть");
         }
     }
 
