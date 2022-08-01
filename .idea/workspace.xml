@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63627943-f1df-484a-904f-8099a28f8c38" name="Default Changelist" comment="" />
+    <list default="true" id="a419da49-f6c2-4afa-b7de-cf7b58eeff5e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HomeWork3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeWork01/HelloWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeWork01/HelloWorld.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeWork01/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HomeWork/by/itacademy/hm2/Task4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HomeWork/by/itacademy/hm2/Task5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HomeWork/by/itacademy/hm2/Task6.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -18,14 +34,9 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2CZRP8GvTC0MvF4plQlnPxtGbav" />
+  <component name="ProjectId" id="2Cli2s9RVLGgiTR56MP6P660KoU" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -35,41 +46,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Task4">
-    <configuration name="Task2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by.itacademy.hm2.Task2" />
-      <module name="HomeWork" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="by.itacademy.hm2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Task3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by.itacademy.hm2.Task3" />
-      <module name="HomeWork" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="by.itacademy.hm2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Task8">
     <configuration name="Task4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by.itacademy.hm2.Task4" />
-      <module name="HomeWork" />
+      <option name="MAIN_CLASS_NAME" value="by.itacademy.hw3.Task4" />
+      <module name="HomeWork3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by.itacademy.hm2.*" />
+          <option name="PATTERN" value="by.itacademy.hw3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -78,11 +63,11 @@
       </method>
     </configuration>
     <configuration name="Task5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by.itacademy.hm2.Task5" />
-      <module name="HomeWork" />
+      <option name="MAIN_CLASS_NAME" value="by.itacademy.hw3.Task5" />
+      <module name="HomeWork3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by.itacademy.hm2.*" />
+          <option name="PATTERN" value="by.itacademy.hw3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,11 +76,37 @@
       </method>
     </configuration>
     <configuration name="Task6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by.itacademy.hm2.Task6" />
-      <module name="HomeWork" />
+      <option name="MAIN_CLASS_NAME" value="by.itacademy.hw3.Task6" />
+      <module name="HomeWork3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by.itacademy.hm2.*" />
+          <option name="PATTERN" value="by.itacademy.hw3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Task7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by.itacademy.hw3.Task7" />
+      <module name="HomeWork3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.itacademy.hw3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Task8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by.itacademy.hw3.Task8" />
+      <module name="HomeWork3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.itacademy.hw3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,22 +116,22 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Task4" />
+        <item itemvalue="Application.Task8" />
+        <item itemvalue="Application.Task7" />
         <item itemvalue="Application.Task6" />
         <item itemvalue="Application.Task5" />
-        <item itemvalue="Application.Task3" />
-        <item itemvalue="Application.Task2" />
+        <item itemvalue="Application.Task4" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="63627943-f1df-484a-904f-8099a28f8c38" name="Default Changelist" comment="" />
-      <created>1659008094508</created>
+      <changelist id="a419da49-f6c2-4afa-b7de-cf7b58eeff5e" name="Default Changelist" comment="" />
+      <created>1659383370767</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1659008094508</updated>
+      <updated>1659383370767</updated>
     </task>
     <servers />
   </component>
@@ -129,19 +140,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="hw2" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -151,15 +150,16 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/by/itacademy/hm2/Task6.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/src/by/itacademy/hw3/Task2.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/by/itacademy/hw3/Task7.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
