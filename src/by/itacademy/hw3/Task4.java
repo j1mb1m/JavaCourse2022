@@ -20,7 +20,7 @@ public class Task4 {
             System.out.printf("Число %d уже введено, введите другое. ", c);
             b = enterFromScanner();
         }
-        printSortedNumber(a, b, c);
+        printSortedNumbers(a, b, c);
     }
 
     public static int enterFromScanner(){
@@ -35,22 +35,22 @@ public class Task4 {
         return num;
     }
 
-    public static void printSortedNumber(int a, int b, int c){
+    public static void printSortedNumbers(int a, int b, int c){
         if (a < b && a < c) {
             System.out.println(a);
-            printSortedNumber(b, c);
+            printSortedNumbers(b, c);
         }
         else if (b < a && b < c) {
             System.out.println(b);
-            printSortedNumber(a, c);
+            printSortedNumbers(a, c);
         }
         else {
             System.out.println(c);
-            printSortedNumber(a, b);
+            printSortedNumbers(a, b);
         };
 
     }
-    public static void printSortedNumber(int a, int b){
+    public static void printSortedNumbers(int a, int b){
         if (a < b) {
             System.out.println(a);
             System.out.println(b);
