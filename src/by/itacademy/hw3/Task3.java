@@ -26,7 +26,7 @@ public class Task3 {
             case 7 :
                 System.out.println("Выходной"); break;
             default:
-                System.out.println("Ошибка"); break;
+                System.out.println("Ошибка");
         }
     }
 
@@ -37,9 +37,8 @@ public class Task3 {
             scanner.nextLine();
             System.out.println("Error! Try again >> ");
         }
-        int num = scanner.nextInt();
 
-        return num;
+        return scanner.nextInt();
     }
 
 }

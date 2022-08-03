@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a419da49-f6c2-4afa-b7de-cf7b58eeff5e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HomeWork3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomeWork01/HelloWorld.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomeWork01/HelloWorld.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomeWork01/HelloWorld.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeWork/by/itacademy/hm2/Task4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeWork/by/itacademy/hm2/Task5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeWork/by/itacademy/hm2/Task6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/itacademy/hw3/Task3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/itacademy/hw3/Task3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +32,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Task5">
+  <component name="RunManager" selected="Application.Task7">
     <configuration name="Task3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="by.itacademy.hw3.Task3" />
       <module name="HomeWork3" />
@@ -116,10 +100,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Task5" />
-        <item itemvalue="Application.Task3" />
-        <item itemvalue="Application.Task8" />
         <item itemvalue="Application.Task7" />
+        <item itemvalue="Application.Task3" />
+        <item itemvalue="Application.Task5" />
+        <item itemvalue="Application.Task8" />
         <item itemvalue="Application.Task6" />
       </list>
     </recent_temporary>

@@ -29,8 +29,7 @@ public class Task7 {
             scanner.nextLine();
             System.out.println("Ошибка! Повторите ввод >> ");
         }
-        int num = scanner.nextInt();
 
-        return num;
+        return scanner.nextInt();
     }
 }
