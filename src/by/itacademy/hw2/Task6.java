@@ -1,18 +1,18 @@
-package by.itacademy.hm2;
+package by.itacademy.hw2;
 
 public class Task6 {
 
     public static void main(String[] args) {
 
-        double num1, num2, num3, maxNum;
+        double num1, num2, num3, minNum;
 
         num1 = getRandomNumber();
         num2 = getRandomNumber();
         num3 = getRandomNumber();
 
-        maxNum = minNumber(Math.abs(num1), Math.abs(num2), Math.abs(num3));
+        minNum = minNumber(Math.abs(num1), Math.abs(num2), Math.abs(num3));
 
-        System.out.printf("Из чисел %f, %f, %f самым наименьшим по модуль является %f", num1, num2, num3, maxNum);
+        System.out.printf("Из чисел %f, %f, %f самым наименьшим по модулю является %f", num1, num2, num3, minNum);
     }
 
     public static double getRandomNumber(){

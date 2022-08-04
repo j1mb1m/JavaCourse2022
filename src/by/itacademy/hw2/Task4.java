@@ -1,4 +1,4 @@
-package by.itacademy.hm2;
+package by.itacademy.hw2;
 
 public class Task4 {
 
@@ -12,16 +12,16 @@ public class Task4 {
         float f = 46.25f;
         double d = 378.00001234;
 
-        сonversion(b);
-        сonversion(c);
-        сonversion(s);
-        сonversion(i);
-        сonversion(l);
-        сonversion(f);
-        сonversion(d);
+        сonvert(b);
+        сonvert(c);
+        сonvert(s);
+        сonvert(i);
+        сonvert(l);
+        сonvert(f);
+        сonvert(d);
     }
 
-    public static void сonversion(byte b) {
+    public static void сonvert(byte b) {
         char c = (char) b;
         short s = b;
         int i = b;
@@ -39,7 +39,7 @@ public class Task4 {
         System.out.println();
     }
 
-    public static void сonversion(char c) {
+    public static void сonvert(char c) {
         byte b = (byte) c;
         short s = (short) c;
         int i = c;
@@ -57,7 +57,7 @@ public class Task4 {
         System.out.println();
     }
 
-    public static void сonversion(short s) {
+    public static void сonvert(short s) {
         byte b = (byte) s;
         char c = (char) s;
         int i = s;
@@ -76,7 +76,7 @@ public class Task4 {
 
     }
 
-    public static void сonversion(int i) {
+    public static void сonvert(int i) {
         byte b = (byte) i;
         char c = (char) i;
         short s = (short) i;
@@ -95,7 +95,7 @@ public class Task4 {
 
     }
 
-    public static void сonversion(long l) {
+    public static void сonvert(long l) {
         byte b = (byte) l;
         char c = (char) l;
         short s = (short) l;
@@ -113,7 +113,7 @@ public class Task4 {
         System.out.println();
     }
 
-    public static void сonversion(float f) {
+    public static void сonvert(float f) {
         byte b = (byte) f;
         char c = (char) f;
         short s = (short) f;
@@ -131,7 +131,7 @@ public class Task4 {
         System.out.println();
     }
 
-    public static void сonversion(double d) {
+    public static void сonvert(double d) {
 
         byte b = (byte) d;
         char c = (char) d;

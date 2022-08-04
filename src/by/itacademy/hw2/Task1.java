@@ -1,4 +1,4 @@
-package by.itacademy.hm2;
+package by.itacademy.hw2;
 
 public class Task1 {
 
