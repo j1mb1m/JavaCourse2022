@@ -13,23 +13,21 @@ public class Task5 {
         int num = enterFromScanner();
         boolean isCorrectNumber = checkNumber(num);
         if (isCorrectNumber) {
-            if(num < 15) System.out.println("Первая четверть");
-            else  if(num < 30) System.out.println("Вторая четверть");
-            else  if(num < 45) System.out.println("Третья четверть");
-            else  System.out.println("Четвертая четверть");
+            if (num < 15) System.out.println("Первая четверть");
+            else if (num < 30) System.out.println("Вторая четверть");
+            else if (num < 45) System.out.println("Третья четверть");
+            else System.out.println("Четвертая четверть");
         }
     }
 
-    public static int enterFromScanner(){
+    public static int enterFromScanner() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number from 0 to 59 >> ");
         while (!scanner.hasNextInt()) {
             scanner.nextLine();
             System.out.println("Error! Try again >> ");
         }
-        int num = scanner.nextInt();
-
-        return num;
+        return scanner.nextInt();
     }
 
     public static boolean checkNumber(int num) {
@@ -39,6 +37,6 @@ public class Task5 {
         }
         return true;
     }
-    }
+}
 
 

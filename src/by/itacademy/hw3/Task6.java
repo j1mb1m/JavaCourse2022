@@ -8,37 +8,34 @@ import java.util.Scanner;
 при условии что, треугольник существует только тогда, когда ни одна
 его сторона не превышает сумму двух других.*/
 public class Task6 {
-   public static void main(String[] args) {
+    public static void main(String[] args) {
 
-      int a = enterFromScanner();
-      int b = enterFromScanner();
-      int c = enterFromScanner();
+        int a = enterFromScanner();
+        int b = enterFromScanner();
+        int c = enterFromScanner();
 
-      boolean isCorrect = checkSidesOfTriangle(a, b, c);
-      if (isCorrect) {
-         System.out.println("Треугольник существует");
-      }
-      else System.out.println("Треугольник не существует");
-   }
+        boolean isCorrect = checkSidesOfTriangle(a, b, c);
+        if (isCorrect) {
+            System.out.println("Треугольник существует");
+        } else System.out.println("Треугольник не существует");
+    }
 
-   public static int enterFromScanner(){
-      Scanner scanner = new Scanner(System.in);
-      System.out.println("Enter number >> ");
-      while (!scanner.hasNextInt()) {
-         scanner.nextLine();
-         System.out.println("Error! Try again >> ");
-      }
-      int num = scanner.nextInt();
+    public static int enterFromScanner() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number >> ");
+        while (!scanner.hasNextInt()) {
+            scanner.nextLine();
+            System.out.println("Error! Try again >> ");
+        }
+        return scanner.nextInt();
+    }
 
-      return num;
-   }
-   public static boolean checkSidesOfTriangle(int a, int b, int c){
+    public static boolean checkSidesOfTriangle(int a, int b, int c) {
 
-      if (a < 0 || b < 0 || c < 0) return false;
-      else if (a + b > c && a + c > b && c + b > a)  return true;
+        if (a < 0 || b < 0 || c < 0) return false;
+        else return (a + b > c && a + c > b && c + b > a);
 
-      return false;
-   }
+    }
 }
 
 

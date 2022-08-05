@@ -22,23 +22,22 @@ public class Task8 {
     public static void main(String[] args) {
 
         int n = enterFromScanner("Введите число из диапазона [0;28800] : ");
-        while (n > 28800) {
+        while (n > 28800 || n < 0) {
             n = enterFromScanner("Повторите попытку. Введите число из диапазона [0;28800] : ");
         }
         System.out.printf("%d секунд\n", n);
         printHour(n);
 
-      }
-    public static int enterFromScanner(String msg){
+    }
+
+    public static int enterFromScanner(String msg) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(msg);
         while (!scanner.hasNextInt()) {
             scanner.nextLine();
             System.out.println("Ошибка! Повторите ввод >> ");
         }
-        int num = scanner.nextInt();
-
-        return num;
+        return scanner.nextInt();
     }
 
     public static void printHour(int n) {

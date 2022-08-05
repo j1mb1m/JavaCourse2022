@@ -19,15 +19,12 @@ public class Task2 {
             scanner.nextLine();
             System.out.println("Error! Try again >> ");
         }
-        int num = scanner.nextInt();
+        return scanner.nextInt();
 
-        return num;
     }
 
     public static boolean isEven(int num){
 
-        if (num % 2 == 0) return true;
-
-        return false;
+        return (num % 2 == 0);
     }
 }
