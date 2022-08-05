@@ -17,7 +17,7 @@ public class Task5 {
         int index = getOddIndexMinNumber(array);
 
         if (index == -1)
-            System.out.printf("Размер массива слишком мал для перебора нечетных индексов.");
+            System.out.print("Размер массива слишком мал для перебора нечетных индексов.");
         else
             System.out.printf("Минимальное число %d из нечетных индексов находится под индексом %d.", array[index], index);
     }

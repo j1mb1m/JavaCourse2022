@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 /*6.	Разложить положительные и отрицательные числа по разным массивам.*/
-public class Task6<createPositiveArray> {
+public class Task6 {
 
     public static void main(String[] args) {
 
@@ -59,8 +59,8 @@ public class Task6<createPositiveArray> {
 
         int count = 0;
 
-        for (int i = 0; i < array.length; i++) {
-            if(array[i] > 0) {
+        for (int item : array) {
+            if (item > 0) {
                 count++;
             }
         }
@@ -72,8 +72,8 @@ public class Task6<createPositiveArray> {
 
         int count = 0;
 
-        for (int i = 0; i < array.length; i++) {
-            if(array[i] < 0) {
+        for (int item : array) {
+            if (item < 0) {
                 count++;
             }
         }
@@ -85,9 +85,9 @@ public class Task6<createPositiveArray> {
         int[] newArray = new int[size];
 
         int currentIndex = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > 0) {
-                newArray[currentIndex] = array[i];
+        for (int item : array) {
+            if (item > 0) {
+                newArray[currentIndex] = item;
                 currentIndex++;
                 if (currentIndex >= size) break;
             }
@@ -101,9 +101,9 @@ public class Task6<createPositiveArray> {
         int[] newArray = new int[size];
 
         int currentIndex = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] < 0) {
-                newArray[currentIndex] = array[i];
+        for (int item : array) {
+            if (item < 0) {
+                newArray[currentIndex] = item;
                 currentIndex++;
                 if (currentIndex >= size) break;
             }

@@ -17,7 +17,7 @@ public class Task4 {
         int indexMin = getIndexMinNumber(array);
         int indexMax = getIndexMaxNumber(array);
 
-        if (indexMin == -1 || indexMax == -1)  System.out.printf("Размер массива слишком мал для перебора индексов.");
+        if (indexMin == -1 || indexMax == -1)  System.out.println("Размер массива слишком мал для перебора индексов.");
         else {
             System.out.printf("Максимальное число %d находится под индексом %d", array[indexMax], indexMax);
             System.out.println();

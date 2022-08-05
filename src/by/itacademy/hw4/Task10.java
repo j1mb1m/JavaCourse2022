@@ -46,9 +46,9 @@ public class Task10 {
         } else {
             System.out.print(msg);
             System.out.println();
-            for (int i = 0; i < array.length; i++) {
-                for (int j = 0; j < array[i].length; j++) {
-                    System.out.printf("%5d", array[i][j]);
+            for (int[] items : array) {
+                for (int item : items) {
+                    System.out.printf("%5d", item);
                 }
                 System.out.println();
             }
