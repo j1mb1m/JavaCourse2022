@@ -6,7 +6,4 @@ public class MatrixOperationException extends Exception{
         super(message);
     }
 
-    public MatrixOperationException() {
-        super();
-    }
 }

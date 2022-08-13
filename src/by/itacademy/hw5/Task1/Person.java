@@ -6,7 +6,6 @@ public class Person {
 
     public Person() {
         this.fullName = "<Имя не задано>";
-        this.age = 0;
     }
 
     public Person(String fullName, int age) {

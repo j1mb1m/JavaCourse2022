@@ -1,15 +1,15 @@
 package by.itacademy.hw5.Task3;
 
 public class Main {
-    public static void main(String[] args) throws MatrixOperationException {
+    public static void main(String[] args) {
         testSum(5, 2, 2);
         testSum(0, 0, 2);
         testSum(1, 0, 2);
-        testSum(5, 2, 5,2);
-        testSum(0, 0, 2,0);
+        testSum(5, 2, 5, 2);
+        testSum(0, 0, 2, 0);
         testSum(1, 0, 0, 0);
-        testMultiply(3, 2, 2,5);
-        testMultiply(0, 0, 2,0);
+        testMultiply(3, 2, 2, 5);
+        testMultiply(0, 0, 2, 0);
         testMultiply(1, 0, 0, 0);
 
     }
@@ -29,7 +29,7 @@ public class Main {
 
     }
 
-    public static void testSum(int rowsFirstMatrix, int columnsFirstMatrix, int rowsSecondMatrix, int columnsSecondMatrix) throws MatrixOperationException {
+    public static void testSum(int rowsFirstMatrix, int columnsFirstMatrix, int rowsSecondMatrix, int columnsSecondMatrix) {
         Matrix matrix1 = new Matrix(rowsFirstMatrix, columnsFirstMatrix);
         matrix1.initRandom();
 
@@ -52,7 +52,7 @@ public class Main {
 
     }
 
-    public static void testMultiply(int rowsFirstMatrix, int columnsFirstMatrix, int rowsSecondMatrix, int columnsSecondMatrix) throws MatrixOperationException {
+    public static void testMultiply(int rowsFirstMatrix, int columnsFirstMatrix, int rowsSecondMatrix, int columnsSecondMatrix) {
         Matrix matrix1 = new Matrix(rowsFirstMatrix, columnsFirstMatrix);
         matrix1.initRandom();
 
@@ -73,5 +73,5 @@ public class Main {
         System.out.println();
         System.out.println();
 
-        }
+    }
 }
