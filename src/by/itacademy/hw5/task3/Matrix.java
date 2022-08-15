@@ -1,4 +1,4 @@
-package by.itacademy.hw5.Task3;
+package by.itacademy.hw5.task3;
 
 import java.util.Random;
 

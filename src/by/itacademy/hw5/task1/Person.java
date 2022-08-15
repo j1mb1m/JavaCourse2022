@@ -1,4 +1,4 @@
-package by.itacademy.hw5.Task1;
+package by.itacademy.hw5.task1;
 
 public class Person {
     public String fullName;

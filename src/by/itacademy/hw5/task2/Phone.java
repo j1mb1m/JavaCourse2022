@@ -1,4 +1,4 @@
-package by.itacademy.hw5.Task2;
+package by.itacademy.hw5.task2;
 
 public class Phone {
     private int number;
