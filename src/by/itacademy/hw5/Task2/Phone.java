@@ -1,9 +1,9 @@
 package by.itacademy.hw5.Task2;
 
 public class Phone {
-    public int number;
-    public String model;
-    public double weight;
+    private int number;
+    private String model;
+    private double weight;
 
     public Phone() {
     }
@@ -21,6 +21,10 @@ public class Phone {
 
     public int getNumber(){
         return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public void sendMessage(int ... numbers){
