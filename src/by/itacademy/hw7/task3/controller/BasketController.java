@@ -3,6 +3,7 @@ package by.itacademy.hw7.task3.controller;
 import by.itacademy.hw7.task3.entity.Basket;
 import by.itacademy.hw7.task3.entity.Fruit;
 import by.itacademy.hw7.task3.view.ViewImpl;
+import by.itacademy.hw7.task4.entity.Flower;
 
 public class BasketController {
     private Basket basket;
@@ -17,11 +18,34 @@ public class BasketController {
         return basket;
     }
 
+    public int size() {
+        return basket.size();
+    }
+
+    public Fruit get(int index) {
+        return basket.get(index);
+    }
+
+    public void add(Fruit fruit) {
+        basket.add(fruit);
+    }
+
+    public void add(Fruit... fruits) {
+        basket.add(fruits);
+    }
+
+    public void clear() {
+        basket.clear();
+    }
+
+    public void remove(Fruit fruit) {
+        basket.remove(fruit);
+    }
+
     public FruitArray getFruitByType(String type) {
         FruitArray fruitArray = new FruitArray();
-        FruitArray fruitBasket = basket.getBasket();
-        for (int i = 0; i < fruitBasket.size(); i++) {
-            Fruit temp = fruitBasket.get(i);
+        for (int i = 0; i < basket.size(); i++) {
+            Fruit temp = basket.get(i);
             if (temp.getType().equals(type)) {
                 fruitArray.add(temp);
             }
@@ -30,19 +54,19 @@ public class BasketController {
     }
 
     public String[] getFruitType() {
-        FruitArray fruitBasket = basket.getBasket();
-        String[] tempArrayType = new String[fruitBasket.size()];
+
+        String[] tempArrayType = new String[basket.size()];
         int countType = 0;
-        for (int i = 0; i < fruitBasket.size(); i++) {
+        for (int i = 0; i < basket.size(); i++) {
             boolean found = false;
             for (int j = 0; j < countType; j++) {
-                if (tempArrayType[j].equals(fruitBasket.get(i).getType())) {
+                if (tempArrayType[j].equals(basket.get(i).getType())) {
                     found = true;
                     break;
                 }
             }
             if (!found) {
-                tempArrayType[countType] = fruitBasket.get(i).getType();
+                tempArrayType[countType] = basket.get(i).getType();
                 countType++;
             }
         }
@@ -53,23 +77,37 @@ public class BasketController {
         return typeArray;
     }
 
-    public void printCostBasket(){
-        basketView.printCostBasket(basket.getTotalCost());
+    public double getTotalCost() {
+        return getTotalCost(basket.getBasket());
     }
-    public void printBasket(){
+
+    public double getTotalCost(FruitArray fruitArray) {
+        double totalCost = 0;
+        for (int i = 0; i < fruitArray.size(); i++) {
+
+            totalCost += fruitArray.get(i).getCost();
+        }
+        return totalCost;
+    }
+
+    public void printCostBasket() {
+        basketView.printCostBasket(getTotalCost());
+    }
+
+    public void printBasket() {
         basketView.printMessage("Корзина содержит:  ");
 
-        for (Fruit fruit : basket.getBasket().getArray()) {
-            basketView.printMessage(fruit.toString());
+        for (int i = 0; i < basket.size(); i++) {
+            basketView.printMessage(basket.get(i).toString());
         }
         basketView.printMessage("");
     }
 
-    public void printCostBasketByTypeFruit(){
+    public void printCostBasketByTypeFruit() {
         String[] fruitType = getFruitType();
         basketView.printMessage("Стоимость корзины в разрезе типов фруктов: ");
         for (String type : fruitType) {
-            basketView.printCostBasketByTypeFruit(type, basket.getTotalCost(getFruitByType(type)));
+            basketView.printCostBasketByTypeFruit(type, getTotalCost(getFruitByType(type)));
         }
     }
 

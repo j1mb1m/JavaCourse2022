@@ -1,34 +1,34 @@
-package by.itacademy.hw7.task3.controller;
+package by.itacademy.hw7.task4.controller;
 
-import by.itacademy.hw7.task3.entity.Fruit;
+import by.itacademy.hw7.task4.entity.Flower;
 
-public class FruitArray {
-    private Fruit[] array;
+public class FlowerArray {
+    private Flower[] array;
     private int size = 0;
     private static final int DEFAULT_CAPACITY = 10;
 
-    public FruitArray() {
-        this.array = new Fruit[DEFAULT_CAPACITY];
+    public FlowerArray() {
+        this.array = new Flower[DEFAULT_CAPACITY];
     }
 
     public int size() {
         return size;
     }
 
-    public void add(Fruit fruit) {
+    public void add(Flower flower) {
         if (size == array.length) {
             int newLenght = (int) (1.5 * size);
-            Fruit[] newArray = new Fruit[newLenght];
+            Flower[] newArray = new Flower[newLenght];
             for (int i = 0; i < size; i++) {
                 newArray[i] = array[i];
             }
             array = newArray;
         }
-        array[size] = fruit;
+        array[size] = flower;
         size++;
     }
 
-    public Fruit get(int index) {
+    public Flower get(int index) {
         return array[index];
     }
 
@@ -51,18 +51,18 @@ public class FruitArray {
         return false;
     }
 
-    public boolean remove(Fruit fruit) {
+    public boolean remove(Flower flower) {
         for (int i = 0; i < size; i++) {
-            if (fruit == null && array[i] == fruit) {
+            if (flower == null && array[i] == flower) {
                 return remove(i);
-            } else if (array[i].equals(fruit)) {
+            } else if (array[i].equals(flower)) {
                 return remove(i);
             }
         }
         return false;
     }
 
-    public Fruit[] getArray() {
+    public Flower[] getArray() {
         return array;
     }
 }

@@ -13,12 +13,20 @@ public class Basket {
 
     public void add(Fruit... fruits) {
         for (Fruit fruit : fruits) {
-            basket.add(fruit);
+            add(fruit);
         }
+    }
+
+    public int size() {
+        return basket.size();
     }
 
     public void add(Fruit fruit) {
         basket.add(fruit);
+    }
+
+    public Fruit get(int index) {
+        return basket.get(index);
     }
 
     public void clear() {
@@ -29,24 +37,8 @@ public class Basket {
         basket.remove(fruit);
     }
 
-    public double getTotalCost() {
-        return getTotalCost(basket);
-    }
-
-    public double getTotalCost(FruitArray fruitArray) {
-        double totalCost = 0;
-        for (int i = 0; i < fruitArray.size(); i++) {
-
-            totalCost += fruitArray.get(i).getCost();
-        }
-        return totalCost;
-    }
-
     public FruitArray getBasket() {
         return basket;
     }
-
-
-
 
 }
