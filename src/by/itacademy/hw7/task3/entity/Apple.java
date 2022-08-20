@@ -12,8 +12,4 @@ public class Apple extends Fruit {
         return getPrice()*getWeight();
     }
 
-    @Override
-    public String toString() {
-        return getType() + ": вес " + getWeight() + ", цена " + getPrice() + ", стоимость "+ getCost();
-    }
 }

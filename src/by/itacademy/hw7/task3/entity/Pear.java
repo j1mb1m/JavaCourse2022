@@ -13,12 +13,8 @@ public class Pear extends Fruit {
     }
 
     @Override
-    public void printManufacturerInfo() {
-        System.out.print("Made in Poland");
+    public String printManufacturerInfo() {
+        return "Made in Poland";
     }
 
-    @Override
-    public String toString() {
-        return this.getType() + ": вес " + getWeight() + ", цена " + getPrice() + ", стоимость "+ getCost();
-    }
 }

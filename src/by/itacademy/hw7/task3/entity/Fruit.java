@@ -7,7 +7,9 @@ public abstract class Fruit {
     private double price;
     private String type;
 
-    public void printManufacturerInfo(){System.out.print("Made in Belarus");}
+    public String printManufacturerInfo() {
+        return "Made in Belarus";
+    }//переписала на функцию
 
     public abstract double getCost();
 
@@ -51,5 +53,14 @@ public abstract class Fruit {
     @Override
     public int hashCode() {
         return Objects.hash(getWeight(), getPrice());
+    }
+
+    @Override
+    public String toString() {
+        return type + " (" +
+                printManufacturerInfo() + ")" +
+                ", weight=" + weight +
+                ", price=" + price +
+                ", cost=" + getCost();
     }
 }

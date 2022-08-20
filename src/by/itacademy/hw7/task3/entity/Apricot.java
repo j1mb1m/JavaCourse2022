@@ -13,7 +13,7 @@ public class Apricot extends Fruit {
     }
 
     @Override
-    public String toString() {
-        return getType() + ": вес " + getWeight() + ", цена " + getPrice() + ", стоимость "+ getCost();
+    public String printManufacturerInfo() {
+        return "Made in Turkey";
     }
 }
