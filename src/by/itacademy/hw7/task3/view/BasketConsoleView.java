@@ -1,10 +1,8 @@
 package by.itacademy.hw7.task3.view;
 
-import by.itacademy.hw7.task3.controller.BasketController;
-import by.itacademy.hw7.task3.controller.FruitArray;
 import by.itacademy.hw7.task3.entity.*;
 
-public class BasketConsoleView implements View{
+public class BasketConsoleView implements ViewImpl {
 
     @Override
     public void printCostBasket(double totalCost) {

@@ -2,13 +2,13 @@ package by.itacademy.hw7.task3.controller;
 
 import by.itacademy.hw7.task3.entity.Basket;
 import by.itacademy.hw7.task3.entity.Fruit;
-import by.itacademy.hw7.task3.view.View;
+import by.itacademy.hw7.task3.view.ViewImpl;
 
 public class BasketController {
     private Basket basket;
-    private View basketView;
+    private ViewImpl basketView;
 
-    public BasketController(Basket basket, View view) {
+    public BasketController(Basket basket, ViewImpl view) {
         this.basket = basket;
         this.basketView = view;
     }
