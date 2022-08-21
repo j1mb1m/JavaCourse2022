@@ -2,8 +2,6 @@ package by.itacademy.hw7.task3.entity;
 
 import by.itacademy.hw7.task3.controller.FruitArray;
 
-import java.util.List;
-
 public class Basket {
     private final FruitArray basket;
 

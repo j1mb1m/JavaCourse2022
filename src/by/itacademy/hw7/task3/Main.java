@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
         BasketController basketController = new BasketController(new Basket(), new BasketConsoleView());
-        basketController.add(new Apple(0.52, 10),
+        basketController.addFruit(new Apple(0.52, 10),
                 new Apricot(1, 12),
                 new Apple(0.54, 8.45),
                 new Pear(5.5, 10));

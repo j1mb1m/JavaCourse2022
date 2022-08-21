@@ -18,31 +18,31 @@ public class BasketController {
         return basket;
     }
 
-    public int size() {
+    public int countFruitInBasket() {
         return basket.size();
     }
 
-    public Fruit get(int index) {
+    public Fruit getFruit(int index) {
         return basket.get(index);
     }
 
-    public void add(Fruit fruit) {
+    public void addFruit(Fruit fruit) {
         basket.add(fruit);
     }
 
-    public void add(Fruit... fruits) {
+    public void addFruit(Fruit... fruits) {
         basket.add(fruits);
     }
 
-    public void clear() {
+    public void clearBasket() {
         basket.clear();
     }
 
-    public void remove(Fruit fruit) {
+    public void removeFruit(Fruit fruit) {
         basket.remove(fruit);
     }
 
-    public FruitArray getFruitByType(String type) {
+    public FruitArray getFruitArrayByType(String type) {
         FruitArray fruitArray = new FruitArray();
         for (int i = 0; i < basket.size(); i++) {
             Fruit temp = basket.get(i);
@@ -107,7 +107,7 @@ public class BasketController {
         String[] fruitType = getFruitType();
         basketView.printMessage("Стоимость корзины в разрезе типов фруктов: ");
         for (String type : fruitType) {
-            basketView.printCostBasketByTypeFruit(type, getTotalCost(getFruitByType(type)));
+            basketView.printCostBasketByTypeFruit(type, getTotalCost(getFruitArrayByType(type)));
         }
     }
 

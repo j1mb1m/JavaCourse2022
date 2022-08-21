@@ -22,19 +22,19 @@ public class BouquetController {
         return cost;
     }
 
-    public void add(Flower flower) {
+    public void addFlower(Flower flower) {
         bouquet.add(flower);
     }
 
-    public void add(Flower... flowers) {
+    public void addFlower(Flower... flowers) {
         bouquet.add(flowers);
     }
 
-    public void clear() {
+    public void clearBouquet() {
         bouquet.clear();
     }
 
-    public void remove(Flower flower) {
+    public void removeFlower(Flower flower) {
         bouquet.remove(flower);
     }
 

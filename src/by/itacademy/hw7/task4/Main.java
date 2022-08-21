@@ -15,7 +15,7 @@ public class Main {
 
         BouquetController controller = new BouquetController(new Bouquet(), new ConsoleViewService());
 
-        controller.add(new Rose(red, 3.5, 5),
+        controller.addFlower(new Rose(red, 3.5, 5),
                 new Rose(red, 3.5, 5),
                 new Eucalyptus(green, 3, 10),
                 new Eucalyptus(green, 3, 10),
