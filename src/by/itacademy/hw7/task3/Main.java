@@ -1,10 +1,7 @@
 package by.itacademy.hw7.task3;
 
 import by.itacademy.hw7.task3.controller.BasketController;
-import by.itacademy.hw7.task3.entity.Apple;
-import by.itacademy.hw7.task3.entity.Apricot;
-import by.itacademy.hw7.task3.entity.Basket;
-import by.itacademy.hw7.task3.entity.Pear;
+import by.itacademy.hw7.task3.entity.*;
 import by.itacademy.hw7.task3.view.BasketConsoleView;
 
 public class Main {

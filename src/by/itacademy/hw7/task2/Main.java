@@ -1,8 +1,6 @@
 package by.itacademy.hw7.task2;
 
 import by.itacademy.hw7.task2.entity.Centigrade;
-import by.itacademy.hw7.task2.entity.Fahrenheit;
-import by.itacademy.hw7.task2.entity.Kelvin;
 import by.itacademy.hw7.task2.logic.TemperatureConversion;
 
 public class Main {
