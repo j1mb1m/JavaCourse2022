@@ -1,23 +1,35 @@
 package by.itacademy.hw7.task2;
 
-import by.itacademy.hw7.task2.entity.Centigrade;
-import by.itacademy.hw7.task2.logic.TemperatureConversion;
+import by.itacademy.hw7.task2.entity.Celsius;
+import by.itacademy.hw7.task2.entity.Fahrenheit;
+import by.itacademy.hw7.task2.logic.*;
 
 public class Main {
     public static void main(String[] args) {
-        Centigrade centigrade = new Centigrade(30);
+        Converter conversionToFahrenheit = new FahrenheitConverterImpl();
+        Converter conversionToKelvin= new KelvinConverterImpl();
+        Converter conversionToCelsius = new CelsiusConverterImpl();
+
+        Celsius centigrade = new Celsius(30);
         System.out.println("Перевод температуры " + centigrade);
-        System.out.println(">" + TemperatureConversion.convertToFahrenheit(centigrade));
-        System.out.println(">" + TemperatureConversion.convertToKelvin(centigrade));
+        System.out.println(">" + conversionToFahrenheit.convert(centigrade));
+        System.out.println(">" + conversionToKelvin.convert(centigrade));
 
-        Centigrade centigrade1 = new Centigrade(0);
+        Celsius centigrade1 = new Celsius(0);
         System.out.println("Перевод температуры " + centigrade1);
-        System.out.println(">" + TemperatureConversion.convertToFahrenheit(centigrade1));
-        System.out.println(">" + TemperatureConversion.convertToKelvin(centigrade1));
+        System.out.println(">" + conversionToFahrenheit.convert(centigrade1));
+        System.out.println(">" + conversionToKelvin.convert(centigrade1));
 
-        Centigrade centigrade2 = new Centigrade(-10);
+        Celsius centigrade2 = new Celsius(-10);
         System.out.println("Перевод температуры " + centigrade2);
-        System.out.println(">" + TemperatureConversion.convertToFahrenheit(centigrade2));
-        System.out.println(">" + TemperatureConversion.convertToKelvin(centigrade2));
+        System.out.println(">" + conversionToFahrenheit.convert(centigrade2));
+        System.out.println(">" + conversionToKelvin.convert(centigrade2));
+
+        Fahrenheit fahrenheit = new Fahrenheit(86);
+        System.out.println("Перевод температуры " + fahrenheit);
+        System.out.println(">" + conversionToCelsius.convert(fahrenheit));
+        System.out.println(">" + conversionToKelvin.convert(fahrenheit));
+
+
     }
 }
