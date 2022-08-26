@@ -1,7 +1,5 @@
 package by.itacademy.hw7.task1;
 
-import java.util.Objects;
-
 public class GraduateStudent extends Student {
 
     private String scientificWork = "<не указана>";
@@ -12,14 +10,6 @@ public class GraduateStudent extends Student {
 
     public GraduateStudent(String firstName, String lastName, int course, StudyGroup group, int averageRating, String scientificWork) {
         super(firstName, lastName, course, group, averageRating);
-        this.scientificWork = scientificWork;
-    }
-
-    public final String getScientificWork() {
-        return scientificWork;
-    }
-
-    public final void setScientificWork(String scientificWork) {
         this.scientificWork = scientificWork;
     }
 
@@ -38,17 +28,4 @@ public class GraduateStudent extends Student {
 
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        GraduateStudent that = (GraduateStudent) o;
-        return Objects.equals(scientificWork, that.scientificWork);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), scientificWork);
-    }
 }
