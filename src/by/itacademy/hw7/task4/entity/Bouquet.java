@@ -1,6 +1,5 @@
 package by.itacademy.hw7.task4.entity;
 
-import by.itacademy.hw7.task3.entity.Fruit;
 import by.itacademy.hw7.task4.controller.FlowerArray;
 
 public class Bouquet {
@@ -13,29 +12,34 @@ public class Bouquet {
     public FlowerArray getFlowerArray() {
         return flowerArray;
     }
-    public void add(Flower... flowers) {
+
+    public void addFlower(Flower[] flowers) {
         for (Flower flower : flowers) {
-            add(flower);
+            addFlower(flower);
         }
     }
 
-    public void add(Flower flower) {
+    public void addFlower(Flower flower) {
         flowerArray.add(flower);
     }
 
-    public int size() {
+    public int sizeBouquet() {
         return flowerArray.size();
     }
-    public Flower get(int index) {
+
+    public Flower getFlower(int index) {
         return flowerArray.get(index);
     }
 
-    public void clear() {
+    public void clearBouquet() {
         flowerArray.clear();
     }
 
-    public void remove(Flower flower) {
-        flowerArray.remove(flower);
+    public boolean removeFlower(Flower flower) {
+        return flowerArray.remove(flower);
     }
 
+    public boolean removeFlower(int index) {
+        return flowerArray.remove(index);
+    }
 }

@@ -1,9 +1,9 @@
 package by.itacademy.hw7.task4;
 
 
-import by.itacademy.hw7.task4.controller.BouquetController;
+import by.itacademy.hw7.task4.controller.BouquetHandler;
 import by.itacademy.hw7.task4.entity.*;
-import by.itacademy.hw7.task4.view.ConsoleViewServiceImpl;
+import by.itacademy.hw7.task4.view.ViewService;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,9 +13,11 @@ public class Main {
         Color pink = new Color("Розовый");
         Color white = new Color("Белый");
 
-        BouquetController controller = new BouquetController(new Bouquet(), new ConsoleViewServiceImpl());
+        Bouquet bouquet = new Bouquet();
 
-        controller.addFlower(new Rose(red, 3.5, 5),
+        BouquetHandler bouquetHandler = new BouquetHandler(new ViewService());
+
+        bouquetHandler.addFlower(bouquet, new Flower[]{new Rose(red, 3.5, 5),
                 new Rose(red, 3.5, 5),
                 new Eucalyptus(green, 3, 10),
                 new Eucalyptus(green, 3, 10),
@@ -24,11 +26,28 @@ public class Main {
                 new Сarnation(red, 2, 7),
                 new Chamomile(yellow, 2.5, 11),
                 new Rose(white, 5, 7),
-                new Rose(red, 3.5, 5));
+                new Rose(red, 3.5, 5)});
 
-        controller.printColors();
-        controller.printWiltingOfTheBouquet();
-        controller.printCost();
+        bouquetHandler.printColors(bouquet);
+        bouquetHandler.printWiltingOfTheBouquet(bouquet);
+        bouquetHandler.printCost(bouquet);
+
+        System.out.println();
+
+        bouquetHandler.removeFlower(bouquet, 5);
+        bouquetHandler.removeFlower(bouquet, 1);
+        bouquetHandler.printColors(bouquet);
+        bouquetHandler.printWiltingOfTheBouquet(bouquet);
+        bouquetHandler.printCost(bouquet);
+
+        bouquetHandler.clearBouquet(bouquet);
+
+        System.out.println();
+
+        bouquetHandler.addFlower(bouquet, new Rose(red, 3.5, 5));
+        bouquetHandler.printColors(bouquet);
+        bouquetHandler.printWiltingOfTheBouquet(bouquet);
+        bouquetHandler.printCost(bouquet);
 
     }
 }

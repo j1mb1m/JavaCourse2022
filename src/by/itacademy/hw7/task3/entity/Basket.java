@@ -9,32 +9,34 @@ public class Basket {
         this.basket = new FruitArray();
     }
 
-    public void add(Fruit... fruits) {
+    public void addFruit(Fruit[] fruits) {
         for (Fruit fruit : fruits) {
-            add(fruit);
+            addFruit(fruit);
         }
     }
 
-    public int size() {
+    public int countFruit() {
         return basket.size();
     }
 
-    public void add(Fruit fruit) {
+    public void addFruit(Fruit fruit) {
         basket.add(fruit);
     }
 
-    public Fruit get(int index) {
+    public Fruit getFruit(int index) {
         return basket.get(index);
     }
 
-    public void clear() {
+    public void clearBasket() {
         basket.clear();
     }
 
-    public void remove(Fruit fruit) {
-        basket.remove(fruit);
+    public boolean removeFruit(Fruit fruit) {
+        return basket.remove(fruit);
     }
-
+    public boolean removeFruit(int index) {
+        return basket.remove(index);
+    }
     public FruitArray getBasket() {
         return basket;
     }
