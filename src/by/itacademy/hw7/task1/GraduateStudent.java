@@ -4,21 +4,10 @@ import java.util.Objects;
 
 public class GraduateStudent extends Student {
 
-    private String scientificWork;
-
-    public GraduateStudent(String firstName, String lastName, int course, StudyGroup group) {
-        super(firstName, lastName, course, group);
-        this.scientificWork = "<не указана>";
-    }
+    private String scientificWork = "<не указана>";
 
     public GraduateStudent(String firstName, String lastName, int course, StudyGroup group, int averageRating) {
         super(firstName, lastName, course, group, averageRating);
-        this.scientificWork = "<не указана>";
-    }
-
-    public GraduateStudent(String firstName, String lastName, int course, StudyGroup group, String scientificWork) {
-        super(firstName, lastName, course, group);
-        this.scientificWork = scientificWork;
     }
 
     public GraduateStudent(String firstName, String lastName, int course, StudyGroup group, int averageRating, String scientificWork) {
@@ -34,16 +23,11 @@ public class GraduateStudent extends Student {
         this.scientificWork = scientificWork;
     }
 
-    public String getFullInfo() {
+    @Override
+    public String toString() {
         // Вывести: имя, фамилия, номер курса, название группы, средняя оценка, размер стипендии
-        return "Аспирант:" +
-                "\nИмя:              " + getFirstName() +
-                "\nФамилия:          " + getLastName() +
-                "\nНомер курса:      " + getCourse() +
-                "\nНазвание группы:  " + getGroup().getName() +
-                "\nНаучная работа:   " + getScientificWork() +
-                "\nСредняя оценка:   " + getAverageRating() +
-                "\nРазмер стипендии: " + getScholarshipAmount();
+        return String.format("Аспирант: %s \nИмя: %s \nФамилия: %d\nНазвание группы: %s \nНаучная работа: %s \nСредняя оценка: %d\nРазмер стипендии: %f",
+                getFirstName(), getLastName(), getCourse(), getGroup().getName(), scientificWork, getAverageRating(), getScholarshipAmount());
     }
 
     @Override

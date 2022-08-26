@@ -61,20 +61,7 @@ public class Student {
     }
 
     public double getScholarshipAmount() {
-        if (averageRating >= 5) {
-            return 100;
-        } else return 80;
-    }
-
-    public String getFullInfo() {
-        // Вывести: имя, фамилия, номер курса, название группы, средняя оценка, размер стипендии
-        return "Студент:" +
-                "\nИмя:              " + firstName +
-                "\nФамилия:          " + lastName +
-                "\nНомер курса:      " + course +
-                "\nНазвание группы:  " + getGroup().getName() +
-                "\nСредняя оценка:   " + averageRating +
-                "\nРазмер стипендии: " + getScholarshipAmount();
+        return averageRating >= 5 ? 100 : 0;
     }
 
     @Override
@@ -88,5 +75,11 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, course, group, averageRating);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Студент: %s \nИмя: %s \nФамилия: %d\nНазвание группы: %s \nСредняя оценка: %d\nРазмер стипендии: %f",
+                firstName, lastName, course, getGroup().getName(), averageRating, getScholarshipAmount());
     }
 }
