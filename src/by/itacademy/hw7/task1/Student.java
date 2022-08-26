@@ -43,7 +43,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return String.format("Студент: %s \nИмя: %s \nФамилия: %d\nНазвание группы: %s \nСредняя оценка: %d\nРазмер стипендии: %f",
+        return String.format("Студент: %s%nИмя: %s%nФамилия: %d%nНазвание группы: %s%nСредняя оценка: %d%nРазмер стипендии: %f",
                 firstName, lastName, course, getGroup().getName(), averageRating, getScholarshipAmount());
     }
 }

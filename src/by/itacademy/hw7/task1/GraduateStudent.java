@@ -16,7 +16,7 @@ public class GraduateStudent extends Student {
     @Override
     public String toString() {
         // Вывести: имя, фамилия, номер курса, название группы, средняя оценка, размер стипендии
-        return String.format("Аспирант: %s \nИмя: %s \nФамилия: %d\nНазвание группы: %s \nНаучная работа: %s \nСредняя оценка: %d\nРазмер стипендии: %f",
+        return String.format("Аспирант: %s %nИмя: %s%nФамилия: %d%nНазвание группы: %s %nНаучная работа: %s%nСредняя оценка: %d%nРазмер стипендии: %f",
                 getFirstName(), getLastName(), getCourse(), getGroup().getName(), scientificWork, getAverageRating(), getScholarshipAmount());
     }
 

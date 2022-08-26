@@ -1,7 +1,6 @@
 package by.itacademy.hw7.task1;
 
 public class Main {
-    private Student[] students;
 
     public static void main(String[] args) {
         StudyGroup groupISIT = new StudyGroup("ИСИТ");
@@ -20,7 +19,7 @@ public class Main {
         };
 
         for (Student student : students) {
-            System.out.println(student.toString());
+            System.out.println(student);
             System.out.println();
         }
 
