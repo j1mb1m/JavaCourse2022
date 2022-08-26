@@ -3,13 +3,13 @@ package by.itacademy.hw7.task4.controller;
 import by.itacademy.hw7.task4.entity.Bouquet;
 import by.itacademy.hw7.task4.entity.Color;
 import by.itacademy.hw7.task4.entity.Flower;
-import by.itacademy.hw7.task4.view.ViewServiceImpl;
+import by.itacademy.hw7.task4.view.ViewService;
 
 public class BouquetController {
     private Bouquet bouquet;
-    private ViewServiceImpl viewService;
+    private ViewService viewService;
 
-    public BouquetController(Bouquet bouquet, ViewServiceImpl viewService) {
+    public BouquetController(Bouquet bouquet, ViewService viewService) {
         this.bouquet = bouquet;
         this.viewService = viewService;
     }

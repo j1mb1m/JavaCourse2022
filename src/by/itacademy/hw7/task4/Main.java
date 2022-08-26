@@ -3,7 +3,7 @@ package by.itacademy.hw7.task4;
 
 import by.itacademy.hw7.task4.controller.BouquetController;
 import by.itacademy.hw7.task4.entity.*;
-import by.itacademy.hw7.task4.view.ConsoleViewService;
+import by.itacademy.hw7.task4.view.ConsoleViewServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class Main {
         Color pink = new Color("Розовый");
         Color white = new Color("Белый");
 
-        BouquetController controller = new BouquetController(new Bouquet(), new ConsoleViewService());
+        BouquetController controller = new BouquetController(new Bouquet(), new ConsoleViewServiceImpl());
 
         controller.addFlower(new Rose(red, 3.5, 5),
                 new Rose(red, 3.5, 5),
