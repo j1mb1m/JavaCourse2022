@@ -75,10 +75,10 @@ public class BasketHandler {
     }
 
     public double getTotalCost(Basket basket) {
-        return getTotalCost(basket, basket.getBasket());
+        return getTotalCost(basket.getBasket());
     }
 
-    public double getTotalCost(Basket basket, FruitArray fruitArray) {
+    public double getTotalCost(FruitArray fruitArray) {
         double totalCost = 0;
         for (int i = 0; i < fruitArray.size(); i++) {
 
@@ -104,7 +104,7 @@ public class BasketHandler {
         String[] fruitType = getFruitType(basket);
         basketView.printMessage("Стоимость корзины в разрезе типов фруктов: ");
         for (String type : fruitType) {
-            basketView.printCostBasketByTypeFruit(type, getTotalCost(basket, getFruitArrayByType(basket, type)));
+            basketView.printCostBasketByTypeFruit(type, getTotalCost(getFruitArrayByType(basket, type)));
         }
     }
 
