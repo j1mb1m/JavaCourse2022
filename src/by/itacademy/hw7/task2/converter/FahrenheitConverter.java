@@ -1,11 +1,11 @@
-package by.itacademy.hw7.task2.logic;
+package by.itacademy.hw7.task2.converter;
 
 import by.itacademy.hw7.task2.entity.Celsius;
 import by.itacademy.hw7.task2.entity.Fahrenheit;
 import by.itacademy.hw7.task2.entity.Kelvin;
 import by.itacademy.hw7.task2.entity.Temperature;
 
-public class FahrenheitConverterImpl implements Converter{
+public class FahrenheitConverter implements Converter{
 
     @Override
     public Temperature convert(Temperature temperature) {

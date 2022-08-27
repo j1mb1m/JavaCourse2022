@@ -1,7 +1,7 @@
 package by.itacademy.hw7.task4;
 
 
-import by.itacademy.hw7.task4.controller.BouquetHandler;
+import by.itacademy.hw7.task4.service.BouquetHandler;
 import by.itacademy.hw7.task4.entity.*;
 import by.itacademy.hw7.task4.view.ViewService;
 
@@ -23,7 +23,7 @@ public class Main {
                 new Eucalyptus(green, 3, 10),
                 new Eucalyptus(green, 3, 10),
                 new Pion(pink, 4, 9),
-                new Сarnation(red, 2, 7),
+                new Carnation(red, 2, 7),
                 new Chamomile(yellow, 2.5, 11),
                 new Rose(white, 5, 7),
                 new Rose(red, 3.5, 5)});

@@ -1,4 +1,4 @@
-package by.itacademy.hw7.task4.controller;
+package by.itacademy.hw7.task4.service;
 
 import by.itacademy.hw7.task4.entity.Flower;
 

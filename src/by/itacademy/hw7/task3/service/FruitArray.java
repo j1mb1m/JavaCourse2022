@@ -1,4 +1,4 @@
-package by.itacademy.hw7.task3.controller;
+package by.itacademy.hw7.task3.service;
 
 import by.itacademy.hw7.task3.entity.Fruit;
 
