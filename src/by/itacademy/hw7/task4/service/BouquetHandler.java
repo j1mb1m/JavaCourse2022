@@ -14,50 +14,62 @@ public class BouquetHandler {
 
     public double getCost(Bouquet bouquet) {
         double cost = 0;
-        for (int i = 0; i < bouquet.sizeBouquet(); i++) {
-            cost += bouquet.getFlower(i).getPrice();
+        int count = countFruitInBasket(bouquet);
+
+        for (int i = 0; i < count; i++) {
+            cost += bouquet.getFlowerArray().get(i).getPrice();
         }
         return cost;
     }
 
+    public int countFruitInBasket(Bouquet bouquet) {
+        return bouquet.getFlowerArray().size();
+    }
+
     public void addFlower(Bouquet bouquet, Flower flower) {
-        bouquet.addFlower(flower);
+        bouquet.getFlowerArray().add(flower);
     }
 
     public void addFlower(Bouquet bouquet, Flower[] flowers) {
-        bouquet.addFlower(flowers);
+        for (Flower flower : flowers) {
+            addFlower(bouquet, flower);
+        }
     }
 
     public void clearBouquet(Bouquet bouquet) {
-        bouquet.clearBouquet();
+        bouquet.getFlowerArray().clear();
     }
 
     public void removeFlower(Bouquet bouquet, Flower flower) {
-        bouquet.removeFlower(flower);
+        bouquet.getFlowerArray().remove(flower);
     }
 
     public void removeFlower(Bouquet bouquet, int index) {
-        bouquet.removeFlower(index);
+        bouquet.getFlowerArray().remove(index);
     }
 
     public Color[] getAllColors(Bouquet bouquet) {
-        Color[] tempArrayColor = new Color[bouquet.sizeBouquet()];
-        int count = 0;
-        for (int i = 0; i < bouquet.sizeBouquet(); i++) {
+
+        int countFlower = countFruitInBasket(bouquet);
+        int countColor = 0;
+
+        Color[] tempArrayColor = new Color[countFlower];
+
+        for (int i = 0; i < countFlower; i++) {
             boolean found = false;
-            for (int j = 0; j < count; j++) {
-                if (tempArrayColor[j].equals(bouquet.getFlower(i).getColor())) {
+            for (int j = 0; j < countColor; j++) {
+                if (tempArrayColor[j].equals(bouquet.getFlowerArray().get(i).getColor())) {
                     found = true;
                     break;
                 }
             }
             if (!found) {
-                tempArrayColor[count] = bouquet.getFlower(i).getColor();
-                count++;
+                tempArrayColor[countColor] = bouquet.getFlowerArray().get(i).getColor();
+                countColor++;
             }
         }
-        Color[] typeArray = new Color[count];
-        for (int i = 0; i < count; i++) {
+        Color[] typeArray = new Color[countColor];
+        for (int i = 0; i < countColor; i++) {
             typeArray[i] = tempArrayColor[i];
         }
         return typeArray;
@@ -65,8 +77,10 @@ public class BouquetHandler {
 
     public int getWiltingOfTheBouquet(Bouquet bouquet) {
         int maxDay = 0;
-        for (int i = 0; i < bouquet.sizeBouquet(); i++) {
-            maxDay = Math.max(bouquet.getFlower(i).getStorageDays(), maxDay);
+        int count = countFruitInBasket(bouquet);
+
+        for (int i = 0; i < count; i++) {
+            maxDay = Math.max(bouquet.getFlowerArray().get(i).getStorageDays(), maxDay);
         }
         return maxDay;
     }

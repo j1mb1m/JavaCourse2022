@@ -13,33 +13,4 @@ public class Bouquet {
         return flowerArray;
     }
 
-    public void addFlower(Flower[] flowers) {
-        for (Flower flower : flowers) {
-            addFlower(flower);
-        }
-    }
-
-    public void addFlower(Flower flower) {
-        flowerArray.add(flower);
-    }
-
-    public int sizeBouquet() {
-        return flowerArray.size();
-    }
-
-    public Flower getFlower(int index) {
-        return flowerArray.get(index);
-    }
-
-    public void clearBouquet() {
-        flowerArray.clear();
-    }
-
-    public boolean removeFlower(Flower flower) {
-        return flowerArray.remove(flower);
-    }
-
-    public boolean removeFlower(int index) {
-        return flowerArray.remove(index);
-    }
 }

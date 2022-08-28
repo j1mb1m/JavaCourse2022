@@ -2,6 +2,8 @@ package by.itacademy.hw7.task4.service;
 
 import by.itacademy.hw7.task4.entity.Flower;
 
+import java.util.Arrays;
+
 public class FlowerArray {
     private Flower[] array;
     private int size = 0;
@@ -17,8 +19,8 @@ public class FlowerArray {
 
     public void add(Flower flower) {
         if (size == array.length) {
-            int newLenght = (int) (1.5 * size);
-            Flower[] newArray = new Flower[newLenght];
+            int newLength = (int) (1.5 * size);
+            Flower[] newArray = new Flower[newLength];
             for (int i = 0; i < size; i++) {
                 newArray[i] = array[i];
             }
@@ -63,6 +65,6 @@ public class FlowerArray {
     }
 
     public Flower[] getArray() {
-        return array;
+        return Arrays.copyOf(array, size);
     }
 }
