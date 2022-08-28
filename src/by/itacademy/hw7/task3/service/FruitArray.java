@@ -2,6 +2,8 @@ package by.itacademy.hw7.task3.service;
 
 import by.itacademy.hw7.task3.entity.Fruit;
 
+import java.util.Arrays;
+
 public class FruitArray {
     private Fruit[] array;
     private int size = 0;
@@ -19,9 +21,7 @@ public class FruitArray {
         if (size == array.length) {
             int newLenght = (int) (1.5 * size);
             Fruit[] newArray = new Fruit[newLenght];
-            for (int i = 0; i < size; i++) {
-                newArray[i] = array[i];
-            }
+            System.arraycopy(array, 0, newArray, 0, size);
             array = newArray;
         }
         array[size] = fruit;
@@ -42,9 +42,7 @@ public class FruitArray {
 
     public boolean remove(int index) {
         if (index < size) {
-            for (int i = index; i < size - 1; i++) {
-                array[i] = array[i + 1];
-            }
+            if (size - 1 - index >= 0) System.arraycopy(array, index + 1, array, index, size - 1 - index);
             size--;
             return true;
         }
@@ -63,6 +61,6 @@ public class FruitArray {
     }
 
     public Fruit[] getArray() {
-        return array;
+        return Arrays.copyOf(array, size);
     }
 }

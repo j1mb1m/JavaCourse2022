@@ -12,37 +12,41 @@ public class BasketHandler {
     }
 
     public int countFruitInBasket(Basket basket) {
-        return basket.countFruit();
+        return basket.getBasket().size();
     }
 
     public Fruit getFruit(Basket basket, int index) {
-        return basket.getFruit(index);
+        return basket.getBasket().get(index);
     }
 
     public void addFruit(Basket basket, Fruit fruit) {
-        basket.addFruit(fruit);
+        basket.getBasket().add(fruit);
     }
 
     public void addFruit(Basket basket, Fruit[] fruits) {
-        basket.addFruit(fruits);
+        for (Fruit fruit : fruits) {
+            addFruit(basket, fruit);
+        }
     }
 
     public void clearBasket(Basket basket) {
-        basket.clearBasket();
+        basket.getBasket().clear();
     }
 
     public void removeFruit(Basket basket, Fruit fruit) {
-        basket.removeFruit(fruit);
+        basket.getBasket().remove(fruit);
     }
 
     public void removeFruit(Basket basket, int index) {
-        basket.removeFruit(index);
+        basket.getBasket().remove(index);
     }
 
     public FruitArray getFruitArrayByType(Basket basket, String type) {
+        FruitArray fruitBasket = basket.getBasket();
         FruitArray fruitArray = new FruitArray();
-        for (int i = 0; i < basket.countFruit(); i++) {
-            Fruit temp = basket.getFruit(i);
+        int countFruit = countFruitInBasket(basket);
+        for (int i = 0; i < countFruit; i++) {
+            Fruit temp = fruitBasket.get(i);
             if (temp.getType().equals(type)) {
                 fruitArray.add(temp);
             }
@@ -51,19 +55,20 @@ public class BasketHandler {
     }
 
     public String[] getFruitType(Basket basket) {
+        int countFruit = countFruitInBasket(basket);
 
-        String[] tempArrayType = new String[basket.countFruit()];
+        String[] tempArrayType = new String[countFruit];
         int countType = 0;
-        for (int i = 0; i < basket.countFruit(); i++) {
+        for (int i = 0; i < countFruit; i++) {
             boolean found = false;
             for (int j = 0; j < countType; j++) {
-                if (tempArrayType[j].equals(basket.getFruit(i).getType())) {
+                if (tempArrayType[j].equals(basket.getBasket().get(i).getType())) {
                     found = true;
                     break;
                 }
             }
             if (!found) {
-                tempArrayType[countType] = basket.getFruit(i).getType();
+                tempArrayType[countType] = basket.getBasket().get(i).getType();
                 countType++;
             }
         }
@@ -92,12 +97,7 @@ public class BasketHandler {
     }
 
     public void printBasket(Basket basket) {
-        basketView.printMessage(String.format("Корзина содержит %d ед. фруктов:  ", countFruitInBasket(basket)));
-
-        for (int i = 0; i < basket.countFruit(); i++) {
-            basketView.printMessage(basket.getFruit(i).toString());
-        }
-        basketView.printMessage("");
+        basketView.printBasket(basket, countFruitInBasket(basket));
     }
 
     public void printCostBasketByTypeFruit(Basket basket) {

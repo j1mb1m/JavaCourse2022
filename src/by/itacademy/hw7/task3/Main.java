@@ -1,6 +1,6 @@
 package by.itacademy.hw7.task3;
 
-import by.itacademy.hw7.task3.controller.BasketHandler;
+import by.itacademy.hw7.task3.service.BasketHandler;
 import by.itacademy.hw7.task3.entity.*;
 import by.itacademy.hw7.task3.view.BasketView;
 
