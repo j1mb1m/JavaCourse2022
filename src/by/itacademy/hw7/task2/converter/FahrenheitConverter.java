@@ -8,13 +8,17 @@ import by.itacademy.hw7.task2.entity.Temperature;
 public class FahrenheitConverter implements Converter{
 
     @Override
-    public Temperature convert(Temperature temperature) {
-        if (temperature instanceof Celsius) {
-            return new Fahrenheit((1.8*temperature.getValue()) + 32);
-        }
-        else if (temperature instanceof Kelvin) {
-            return new Fahrenheit((temperature.getValue()*9/5) -459.67);
-        }
-        return temperature;
+    public Temperature convert(Fahrenheit fahrenheit) {
+        return new Fahrenheit((fahrenheit.getValue()*9/5) -459.67);
+    }
+
+    @Override
+    public Temperature convert(Celsius celsius) {
+        return new Fahrenheit((1.8*celsius.getValue()) + 32);
+    }
+
+    @Override
+    public Temperature convert(Kelvin kelvin) {
+        return kelvin;
     }
 }
