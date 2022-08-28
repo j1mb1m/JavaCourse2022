@@ -20,8 +20,8 @@ public class ThingArray {
 
     public void add(Thing thing) {
         if (size == array.length) {
-            int newLenght = (int) (1.5 * size);
-            Thing[] newArray = new Thing[newLenght];
+            int newLength = (int) (1.5 * size);
+            Thing[] newArray = new Thing[newLength];
             for (int i = 0; i < size; i++) {
                 newArray[i] = array[i];
             }
