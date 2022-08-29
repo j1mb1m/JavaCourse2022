@@ -1,6 +1,6 @@
-package by.itacademy.hw7.task4.service;
+package by.itacademy.hw7.task4.entity.array;
 
-import by.itacademy.hw7.task4.entity.Flower;
+import by.itacademy.hw7.task4.entity.flower.Flower;
 
 import java.util.Arrays;
 

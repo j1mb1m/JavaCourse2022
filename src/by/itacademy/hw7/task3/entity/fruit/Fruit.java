@@ -1,4 +1,4 @@
-package by.itacademy.hw7.task3.entity;
+package by.itacademy.hw7.task3.entity.fruit;
 
 import java.util.Objects;
 
@@ -30,16 +30,8 @@ public abstract class Fruit {
         return weight;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     @Override

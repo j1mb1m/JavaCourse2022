@@ -1,4 +1,4 @@
-package by.itacademy.hw7.task3.entity;
+package by.itacademy.hw7.task3.entity.fruit;
 
 public class Apple extends Fruit {
 

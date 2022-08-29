@@ -2,98 +2,32 @@ package by.itacademy.hw7.task4.service;
 
 import by.itacademy.hw7.task4.entity.Bouquet;
 import by.itacademy.hw7.task4.entity.Color;
-import by.itacademy.hw7.task4.entity.Flower;
-import by.itacademy.hw7.task4.view.ViewService;
+import by.itacademy.hw7.task4.entity.flower.Flower;
 
-public class BouquetHandler {
-    private ViewService viewService;
+import java.util.Map;
 
-    public BouquetHandler(ViewService viewService) {
-        this.viewService = viewService;
-    }
+public interface BouquetHandler {
 
-    public double getCost(Bouquet bouquet) {
-        double cost = 0;
-        int count = countFruitInBasket(bouquet);
+    void addFlower(Bouquet bouquet, Flower flower);
 
-        for (int i = 0; i < count; i++) {
-            cost += bouquet.getFlowerArray().get(i).getPrice();
-        }
-        return cost;
-    }
+    void addFlower(Bouquet bouquet, Flower[] flowers);
 
-    public int countFruitInBasket(Bouquet bouquet) {
-        return bouquet.getFlowerArray().size();
-    }
+    void removeFlower(Bouquet bouquet, Flower flower);
 
-    public void addFlower(Bouquet bouquet, Flower flower) {
-        bouquet.getFlowerArray().add(flower);
-    }
+    void removeFlower(Bouquet bouquet, int index);
 
-    public void addFlower(Bouquet bouquet, Flower[] flowers) {
-        for (Flower flower : flowers) {
-            addFlower(bouquet, flower);
-        }
-    }
+    void clearBouquet(Bouquet bouquet);
 
-    public void clearBouquet(Bouquet bouquet) {
-        bouquet.getFlowerArray().clear();
-    }
+    double getCost(Bouquet bouquet);
 
-    public void removeFlower(Bouquet bouquet, Flower flower) {
-        bouquet.getFlowerArray().remove(flower);
-    }
+    int countFlowerInBouquet(Bouquet bouquet);
 
-    public void removeFlower(Bouquet bouquet, int index) {
-        bouquet.getFlowerArray().remove(index);
-    }
+    Color[] getAllColors(Bouquet bouquet);
 
-    public Color[] getAllColors(Bouquet bouquet) {
+    String[] getAllFlowers(Bouquet bouquet);
 
-        int countFlower = countFruitInBasket(bouquet);
-        int countColor = 0;
+    Map<String, Integer> getFlowerAndCount(Bouquet bouquet);
 
-        Color[] tempArrayColor = new Color[countFlower];
+    int getWiltingOfTheBouquet(Bouquet bouquet);
 
-        for (int i = 0; i < countFlower; i++) {
-            boolean found = false;
-            for (int j = 0; j < countColor; j++) {
-                if (tempArrayColor[j].equals(bouquet.getFlowerArray().get(i).getColor())) {
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) {
-                tempArrayColor[countColor] = bouquet.getFlowerArray().get(i).getColor();
-                countColor++;
-            }
-        }
-        Color[] typeArray = new Color[countColor];
-        for (int i = 0; i < countColor; i++) {
-            typeArray[i] = tempArrayColor[i];
-        }
-        return typeArray;
-    }
-
-    public int getWiltingOfTheBouquet(Bouquet bouquet) {
-        int maxDay = 0;
-        int count = countFruitInBasket(bouquet);
-
-        for (int i = 0; i < count; i++) {
-            maxDay = Math.max(bouquet.getFlowerArray().get(i).getStorageDays(), maxDay);
-        }
-        return maxDay;
-    }
-
-    public void printCost(Bouquet bouquet) {
-        viewService.printCost(getCost(bouquet));
-    }
-
-    public void printColors(Bouquet bouquet) {
-        viewService.printColors(getAllColors(bouquet));
-    }
-
-    public void printWiltingOfTheBouquet(Bouquet bouquet) {
-        viewService.printMessage(String.format("Букет завянет через %d дн.", getWiltingOfTheBouquet(bouquet)));
-    }
 }

@@ -1,10 +1,12 @@
-package by.itacademy.hw7.task4.entity;
+package by.itacademy.hw7.task4.entity.flower;
+
+import by.itacademy.hw7.task4.entity.Color;
 
 import java.util.Objects;
 
 public abstract class Flower {
     private String type;
-    private Color color;
+    private final Color color;
     private double price;
     private int storageDays;
 
@@ -25,10 +27,6 @@ public abstract class Flower {
 
     public Color getColor() {
         return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
     }
 
     public double getPrice() {

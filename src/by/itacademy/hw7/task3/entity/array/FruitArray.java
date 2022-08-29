@@ -1,6 +1,6 @@
-package by.itacademy.hw7.task3.service;
+package by.itacademy.hw7.task3.entity.array;
 
-import by.itacademy.hw7.task3.entity.Fruit;
+import by.itacademy.hw7.task3.entity.fruit.Fruit;
 
 import java.util.Arrays;
 
