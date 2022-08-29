@@ -4,7 +4,6 @@ import by.itacademy.hw8.task3.datasource.ThingDataSource;
 import by.itacademy.hw8.task3.service.ThingHandler;
 import by.itacademy.hw8.task3.model.ClothingSize;
 import by.itacademy.hw8.task3.model.Color;
-import by.itacademy.hw8.task3.model.Dress;
 import by.itacademy.hw8.task3.model.ShoeSize;
 
 
@@ -31,7 +30,7 @@ public class Main {
         System.out.println();
 
         //ищем по критериям и печатаем результат
-        handler.printCatalog(handler.findThingByClothingSize(handler.findThingByType(thingDataSource, Dress.TYPE), ClothingSize.L));
+        handler.printCatalog(handler.findThingByClothingSize(handler.findThingByType(thingDataSource, "платье"), ClothingSize.L));
         System.out.println();
 
         //выполняем заказ вещей

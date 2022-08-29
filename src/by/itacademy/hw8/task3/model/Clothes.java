@@ -3,7 +3,7 @@ package by.itacademy.hw8.task3.model;
 import java.util.Objects;
 
 public abstract class Clothes extends Thing{
-    private ClothingSize size;
+    private final ClothingSize size;
 
     public Clothes(String name, ClothingSize size, Color color, double price) {
         super(name, color,  price);
@@ -12,10 +12,6 @@ public abstract class Clothes extends Thing{
 
     public ClothingSize getSize() {
         return size;
-    }
-
-    public void setSize(ClothingSize size) {
-        this.size = size;
     }
 
     @Override

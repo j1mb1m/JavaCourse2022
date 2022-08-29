@@ -3,7 +3,7 @@ package by.itacademy.hw8.task3.model;
 import java.util.Objects;
 
 public abstract class Shoe extends Thing{
-    private ShoeSize size;
+    private final ShoeSize size;
 
     public Shoe(String name, ShoeSize size, Color color, double price) {
         super(name, color,  price);
@@ -12,10 +12,6 @@ public abstract class Shoe extends Thing{
 
     public ShoeSize getSize() {
         return size;
-    }
-
-    public void setSize(ShoeSize size) {
-        this.size = size;
     }
 
     @Override
