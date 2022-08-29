@@ -3,6 +3,9 @@ package by.itacademy.hw8.task3.service;
 import by.itacademy.hw8.task3.datasource.ThingDataSource;
 import by.itacademy.hw8.task3.model.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ThingHandler {
 
     /**
@@ -11,7 +14,7 @@ public class ThingHandler {
      * @param size - shoe size
      * @return array of things from the source
      */
-    public ThingArray findThingByShoeSize(ThingDataSource thingDataSource, ShoeSize size) {
+    public List<Thing> findThingByShoeSize(ThingDataSource thingDataSource, ShoeSize size) {
         return findThingByShoeSize(thingDataSource.getThings(), size);
     }
 
@@ -21,18 +24,9 @@ public class ThingHandler {
      * @param size - shoe size
      * @return array of things from the source
      */
-    public ThingArray findThingByShoeSize(ThingArray thingArray, ShoeSize size) {
+    public List<Thing> findThingByShoeSize(List<Thing> thingArray, ShoeSize size) {
         System.out.printf("... выполняется поиск по размеру обуви '%s'%n", size.toString());
-         ThingArray newThingArray = new ThingArray();
-        for (int i = 0; i < thingArray.size(); i++) {
-
-            if (thingArray.get(i) instanceof Shoe shoe) {
-                if (shoe.getSize().equals(size)) {
-                    newThingArray.add(shoe);
-                }
-            }
-
-        }
+        List<Thing> newThingArray = thingArray.stream().filter(x-> x instanceof Shoe).filter(x->((Shoe) x).getSize().equals(size)).toList();
         System.out.printf("найдено '%d' позиций%n", newThingArray.size());
         return newThingArray;
     }
@@ -43,7 +37,7 @@ public class ThingHandler {
      * @param size - clothing size
      * @return array of things from the source
      */
-    public ThingArray findThingByClothingSize(ThingDataSource thingDataSource, ClothingSize size) {
+    public List<Thing> findThingByClothingSize(ThingDataSource thingDataSource, ClothingSize size) {
         return findThingByClothingSize(thingDataSource.getThings(), size);
     }
 
@@ -53,20 +47,9 @@ public class ThingHandler {
      * @param size - clothing size
      * @return array of things from the source
      */
-    public ThingArray findThingByClothingSize(ThingArray thingArray, ClothingSize size) {
+    public List<Thing> findThingByClothingSize(List<Thing> thingArray, ClothingSize size) {
         System.out.printf("... выполняется поиск по размеру одежды '%s'%n", size.toString());
-        ThingArray newThingArray = new ThingArray();
-
-        for (int i = 0; i < thingArray.size(); i++) {
-
-            if (thingArray.get(i) instanceof Clothes clothes) {
-                if (clothes.getSize().equals(size)) {
-                    newThingArray.add(clothes);
-                }
-            }
-
-        }
-
+        List<Thing> newThingArray = thingArray.stream().filter(x-> x instanceof Clothes).filter(x->((Clothes) x).getSize().equals(size)).toList();
         System.out.printf("найдено '%d' позиций%n", newThingArray.size());
         return newThingArray;
     }
@@ -78,7 +61,7 @@ public class ThingHandler {
      * @param color - the color of the thing
      * @return array of things from the source
      */
-    public ThingArray findThingByColor(ThingDataSource thingDataSource, Color color) {
+    public List<Thing> findThingByColor(ThingDataSource thingDataSource, Color color) {
         return findThingByColor(thingDataSource.getThings(), color);
     }
 
@@ -89,16 +72,9 @@ public class ThingHandler {
      * @param color - the color of the thing
      * @return array of things from the source
      */
-    public ThingArray findThingByColor(ThingArray thingArray, Color color) {
+    public List<Thing> findThingByColor(List<Thing> thingArray, Color color) {
         System.out.printf("... выполняется поиск по цвету '%s'%n", color.toString());
-        ThingArray newThingArray = new ThingArray();
-        for (int i = 0; i < thingArray.size(); i++) {
-
-            if (thingArray.get(i).getColor().equals(color)) {
-                newThingArray.add(thingArray.get(i));
-            }
-
-        }
+        List<Thing> newThingArray = thingArray.stream().filter(x->x.getColor().equals(color)).toList();
         System.out.printf("найдено '%d' позиций%n", newThingArray.size());
         return newThingArray;
     }
@@ -110,17 +86,9 @@ public class ThingHandler {
      * @param type - type name of the thing
      * @return array of things from the source
      */
-    public ThingArray findThingByType(ThingDataSource thingDataSource, String type) {
+    public List<Thing> findThingByType(ThingDataSource thingDataSource, String type) {
         System.out.printf("... выполняется поиск по типу '%s'%n", type);
-        ThingArray newThingArray = new ThingArray();
-        ThingArray thingArray = thingDataSource.getThings();
-        for (int i = 0; i < thingArray.size(); i++) {
-
-            if (thingArray.get(i).getName().equalsIgnoreCase(type)) {
-                newThingArray.add(thingArray.get(i));
-            }
-
-        }
+        List<Thing> newThingArray = thingDataSource.getThings().stream().filter(x->x.getName().equalsIgnoreCase(type)).toList();
         System.out.printf("найдено '%d' позиций%n", newThingArray.size());
         return newThingArray;
     }
@@ -151,43 +119,32 @@ public class ThingHandler {
      * @return thing
      */
     private Thing findThingById(ThingDataSource thingDataSource, int id) {
-        //здесь можно было реализовать бинарный поиск. т.к. сортировать список не будем
-        ThingArray thingArray = thingDataSource.getThings();
-        for (int i = 0; i < thingArray.size(); i++) {
-            if (thingArray.get(i).getId() == id) return thingArray.get(i);
+        try {
+            return thingDataSource.getThings().stream().filter(x->x.getId() == id).findFirst().get();
         }
-        return null;
+        catch (Exception e){
+            return null;
+        }
     }
 
-    public void printCost(ThingArray thingArray) {
-        double cost = 0;
-
-        for (int i = 0; i < thingArray.size(); i++) cost += thingArray.get(i).getPrice();
-
+    public void printCost(List<Thing> thingArray) {
+        double cost = thingArray.stream().map(x->x.getPrice()).reduce(0d,(x, y)->x + y);
         System.out.printf("Общая стоимость: %1.2f%n", cost);
     }
 
     public void printCatalog(ThingDataSource thingDataSource) {
         System.out.println("Наличие в каталоге : ");
-        ThingArray thingArray = thingDataSource.getThings();
-        for (int i = 0; i < thingArray.size(); i++) {
-            System.out.println(thingArray.get(i).toString());
-        }
+        thingDataSource.getThings().stream().forEach(x-> System.out.println(x));
     }
 
-    public void printCatalog(ThingArray thingArray) {
+    public void printCatalog(List<Thing> thingArray) {
         System.out.println("Найденные позиции : ");
-        for (int i = 0; i < thingArray.size(); i++) {
-            System.out.println(thingArray.get(i).toString());
-        }
+        thingArray.stream().forEach(x-> System.out.println(x));
     }
 
     public void printOrder(ThingDataSource thingDataSource) {
         System.out.println("Заказанные позиции : ");
-        ThingArray thingArray = thingDataSource.getOrderedThings();
-        for (int i = 0; i < thingArray.size(); i++) {
-            System.out.println(thingArray.get(i).toString());
-        }
+        thingDataSource.getOrderedThings().stream().forEach(x-> System.out.println(x));
     }
 }
 
