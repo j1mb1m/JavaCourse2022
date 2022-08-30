@@ -6,6 +6,7 @@ import by.itacademy.hw9.task3.model.Vehicle;
 public class GarageHandler {
 
     public <T extends Vehicle> void addVehicle(Garage<? super T> garage, T vehicle) {
+
         if (garage.getGarage().contains(vehicle)) {
             System.out.printf("Транспортное средство : %s находится в гараже. Чтобы поставить в гараж, его надо достать из гаража предварительно.%n", vehicle);
         } else if (occupiedArea(garage) + vehicle.getArea() <= garage.getArea()) {
@@ -14,31 +15,31 @@ public class GarageHandler {
         } else {
             System.out.printf("Извините, место в гараже закончилось! Найдите другой гараж для : %s%n", vehicle);
         }
+
     }
 
     public <T extends Vehicle> void pullVehicle(Garage<? super T> garage, T vehicle) {
+
         if (garage.getGarage().remove(vehicle)) {
             System.out.printf("Тарнспортное средство : %s успешно извлечено из гаража%n", vehicle);
         } else {
             System.out.printf("Тарнспортное средство отсутствует в гараже: %s%n", vehicle);
         }
+
     }
 
     private double occupiedArea(Garage<? extends Vehicle> garage) {
-        double area = 0;
 
-        for (var vehicle : garage.getGarage()) {
-            area += vehicle.getArea();
-        }
-        return area;
+          return garage.getGarage().stream()
+                  .map(x->x.getArea())
+                  .reduce(0d, (x, y)-> x+y);
     }
 
     public void inspectGarage(Garage<? extends Vehicle> garage) {
-        System.out.printf("%nВ гараже находится %d ед. транспортных средств%n", garage.getGarage().size());
 
-        for (var vehicle : garage.getGarage()) {
-            System.out.println(vehicle);
-        }
+        System.out.printf("%nВ гараже находится %d ед. транспортных средств%n", garage.getGarage().size());
+        garage.getGarage().forEach(System.out::println);
+
     }
 
 }
