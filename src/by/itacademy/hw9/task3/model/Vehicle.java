@@ -3,6 +3,7 @@ package by.itacademy.hw9.task3.model;
 import java.util.Objects;
 
 public abstract class Vehicle {
+
     private final String model;
     private final String registrationNumber;
     private final double area; //vehicle area

@@ -1,6 +1,7 @@
 package by.itacademy.hw9.task2;
 
 public class Pair <T, V>{
+
     private T firstElement;
     private V secondElement;
 

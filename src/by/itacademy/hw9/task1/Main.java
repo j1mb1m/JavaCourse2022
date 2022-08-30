@@ -7,7 +7,9 @@ package by.itacademy.hw9.task1;
  * над которыми должна быть произведена операция.
  */
 public class Main {
+
     public static void main(String[] args) {
+
         Calculator.sum(1, 2.5);
         Calculator.sum(1, 4);
         Calculator.multiply(1, 2.5);
@@ -17,4 +19,5 @@ public class Main {
         Calculator.subtraction(1, 2.5);
         Calculator.subtraction(1, 4);
     }
+
 }

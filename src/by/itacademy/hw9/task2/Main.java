@@ -6,7 +6,9 @@ package by.itacademy.hw9.task2;
  * местами, поменять первый элемент на новый, поменять второй элемент на новый.
  */
 public class Main {
+
     public static void main(String[] args) {
+
         Pair<String, Integer> pair1 = new Pair<>("id", 1234);
         System.out.printf("pair : %s%n", pair1);
         System.out.printf("First element : %s ('%s')%n", pair1.getFirstElement(), pair1.getFirstElement().getClass());

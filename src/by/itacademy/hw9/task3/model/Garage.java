@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Garage<T extends Vehicle> {
+
     private final List<T> garage = new ArrayList<>();
     private final double area;
 

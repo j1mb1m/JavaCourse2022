@@ -1,6 +1,7 @@
 package by.itacademy.hw9.task3.model;
 
 public class Motorcycle extends Vehicle{
+
     public Motorcycle(String model, String registrationNumber, double area) {
         super(model, registrationNumber, area);
     }

@@ -14,34 +14,36 @@ import by.itacademy.hw9.task3.service.GarageHandler;
  * содержимое гаража.
  */
 public class Main {
+
     public static void main(String[] args) {
-        Garage<Vehicle> garage = new Garage<>(40);
-        System.out.printf("Создан гараж для транспортных средств вместимостью %s%n", garage.getArea());
+
+        Garage<Vehicle> vehicleGarage = new Garage<>(40);
+        System.out.printf("Создан гараж для транспортных средств вместимостью %s%n", vehicleGarage.getArea());
         GarageHandler garageHandler = new GarageHandler();
-        garageHandler.addVehicle(garage, new Car("Audi", "12345", 30));
-        garageHandler.addVehicle(garage, new Motorcycle("Harley Davidson", "886699", 10));
-        garageHandler.addVehicle(garage, new Motorcycle("Harley Davidson", "555555", 10));
+        garageHandler.addVehicle(vehicleGarage, new Car("Audi", "12345", 30));
+        garageHandler.addVehicle(vehicleGarage, new Motorcycle("Harley Davidson", "886699", 10));
+        garageHandler.addVehicle(vehicleGarage, new Motorcycle("Harley Davidson", "555555", 10));
 
-        garageHandler.inspectGarage(garage);
+        garageHandler.inspectGarage(vehicleGarage);
         System.out.println();
 
-        garageHandler.pullVehicle(garage, new Motorcycle("Harley Davidson", "555555", 10));
-        garageHandler.pullVehicle(garage, new Motorcycle("Harley Davidson", "886699", 10));
+        garageHandler.pullVehicle(vehicleGarage, new Motorcycle("Harley Davidson", "555555", 10));
+        garageHandler.pullVehicle(vehicleGarage, new Motorcycle("Harley Davidson", "886699", 10));
         System.out.println();
 
-        Garage<Motorcycle> garage1 = new Garage<>(30);
-        System.out.printf("Создан гараж для мотоциклов вместимостью %s%n", garage1.getArea());
+        Garage<Motorcycle> motorcycleGarage = new Garage<>(30);
+        System.out.printf("Создан гараж для мотоциклов вместимостью %s%n", motorcycleGarage.getArea());
         GarageHandler garageHandler1 = new GarageHandler();
-        garageHandler1.addVehicle(garage1, new Motorcycle("Harley Davidson", "886699", 10));
-        garageHandler1.addVehicle(garage1, new Motorcycle("Harley Davidson", "555555", 10));
-        garageHandler1.addVehicle(garage1, new Motorcycle("Harley Davidson", "555555", 10));
+        garageHandler1.addVehicle(motorcycleGarage, new Motorcycle("Harley Davidson", "886699", 10));
+        garageHandler1.addVehicle(motorcycleGarage, new Motorcycle("Harley Davidson", "555555", 10));
+        garageHandler1.addVehicle(motorcycleGarage, new Motorcycle("Harley Davidson", "555555", 10));
 
-        garageHandler1.inspectGarage(garage1);
+        garageHandler1.inspectGarage(motorcycleGarage);
         System.out.println();
 
-        garageHandler.pullVehicle(garage1, new Motorcycle("Harley Davidson", "555555", 10));
-        garageHandler.pullVehicle(garage1, new Motorcycle("Harley Davidson", "886699", 10));
-        garageHandler1.inspectGarage(garage1);
+        garageHandler.pullVehicle(motorcycleGarage, new Motorcycle("Harley Davidson", "555555", 10));
+        garageHandler.pullVehicle(motorcycleGarage, new Motorcycle("Harley Davidson", "886699", 10));
+        garageHandler1.inspectGarage(motorcycleGarage);
         System.out.println();
 
     }
