@@ -3,6 +3,7 @@ package by.itacademy.hw8.task3.model;
 import java.util.Objects;
 
 public class Color {
+
     private final String name;
 
     public Color(String name) {

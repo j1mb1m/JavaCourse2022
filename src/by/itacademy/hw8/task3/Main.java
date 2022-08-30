@@ -1,36 +1,44 @@
 package by.itacademy.hw8.task3;
 
 import by.itacademy.hw8.task3.datasource.ThingDataSource;
-import by.itacademy.hw8.task3.service.ThingHandler;
-import by.itacademy.hw8.task3.model.ClothingSize;
 import by.itacademy.hw8.task3.model.Color;
-import by.itacademy.hw8.task3.model.ShoeSize;
+import by.itacademy.hw8.task3.model.size.ClothingSize;
+import by.itacademy.hw8.task3.model.size.ShoeSize;
+import by.itacademy.hw8.task3.service.ThingHandlerImpl;
+import by.itacademy.hw8.task3.view.ThingView;
+import by.itacademy.hw8.task3.view.ThingViewImpl;
+import by.itacademy.hw8.task3.view.statusbar.StatusBarImpl;
 
 
 public class Main {
+
     public static void main(String[] args) {
+
         //создаем и инициализируем каталог вещей
         ThingDataSource thingDataSource = new ThingDataSource();
         //создаем обработчик для работы с каталогом
-        ThingHandler handler = new ThingHandler();
+        ThingHandlerImpl handler = new ThingHandlerImpl(new StatusBarImpl());
+        //создаем обработчик для просмотра
+        ThingView thingView = new ThingViewImpl(handler);
+
         //выводим доступные вещи из каталога
-        handler.printCatalog(thingDataSource);
+        thingView.printCatalog(thingDataSource);
         System.out.println();
 
         //ищем по критериям и печатаем результат
-        handler.printCatalog(handler.findThingByClothingSize(handler.findThingByColor(thingDataSource, new Color("белый")), ClothingSize.S));
+        thingView.printCatalog(handler.search(handler.search(thingDataSource, new Color("белый")), ClothingSize.S));
         System.out.println();
 
         //ищем по критериям и печатаем результат
-        handler.printCatalog(handler.findThingByShoeSize(handler.findThingByType(thingDataSource, "кроссовки"), ShoeSize.SIZE37));
+        thingView.printCatalog(handler.search(handler.search(thingDataSource, "кроссовки"), ShoeSize.SIZE37));
         System.out.println();
 
         //ищем по критериям и печатаем результат
-        handler.printCatalog(handler.findThingByShoeSize(handler.findThingByType(thingDataSource, "кеды"), ShoeSize.SIZE37));
+        thingView.printCatalog(handler.search(handler.search(thingDataSource, "кеды"), ShoeSize.SIZE37));
         System.out.println();
 
         //ищем по критериям и печатаем результат
-        handler.printCatalog(handler.findThingByClothingSize(handler.findThingByType(thingDataSource, "платье"), ClothingSize.L));
+        thingView.printCatalog(handler.search(handler.search(thingDataSource, "платье"), ClothingSize.L));
         System.out.println();
 
         //выполняем заказ вещей
@@ -42,12 +50,12 @@ public class Main {
         handler.orderThing(thingDataSource, 1);
 
         //печатаем заказанные вещи
-        handler.printOrder(thingDataSource);
-        handler.printCost(thingDataSource.getOrderedThings());
+        thingView.printOrder(thingDataSource);
+        thingView.printCost(thingDataSource.getOrderedThings());
         System.out.println();
 
         //смотрим что осталось в каталоге
-        handler.printCatalog(thingDataSource);
+        thingView.printCatalog(thingDataSource);
         System.out.println();
     }
 }

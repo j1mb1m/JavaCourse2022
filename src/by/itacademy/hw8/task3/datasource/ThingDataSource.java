@@ -1,11 +1,17 @@
 package by.itacademy.hw8.task3.datasource;
 
-import by.itacademy.hw8.task3.service.ThingArray;
+import by.itacademy.hw8.task3.model.size.ClothingSize;
+import by.itacademy.hw8.task3.model.size.ShoeSize;
+import by.itacademy.hw8.task3.model.thing.*;
+
 import by.itacademy.hw8.task3.model.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ThingDataSource {
-    private final ThingArray things = new ThingArray();
-    private final ThingArray orderedThings = new ThingArray();
+    private final List<Thing> things = new ArrayList<>();
+    private final List<Thing> orderedThings = new ArrayList<>();
 
     private final Color COLOR_BLACK = new Color("Черный");
     private final Color COLOR_WHITE = new Color("Белый");
@@ -40,11 +46,11 @@ public class ThingDataSource {
         things.add(new Sneakers(ShoeSize.SIZE39, COLOR_WHITE, 124.9));
     }
 
-    public ThingArray getThings() {
+    public List<Thing> getThings() {
         return things;
     }
 
-    public ThingArray getOrderedThings() {
+    public List<Thing> getOrderedThings() {
         return orderedThings;
     }
 

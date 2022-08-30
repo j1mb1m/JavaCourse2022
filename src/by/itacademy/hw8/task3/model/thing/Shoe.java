@@ -1,8 +1,12 @@
-package by.itacademy.hw8.task3.model;
+package by.itacademy.hw8.task3.model.thing;
+
+import by.itacademy.hw8.task3.model.Color;
+import by.itacademy.hw8.task3.model.size.ShoeSize;
 
 import java.util.Objects;
 
-public abstract class Shoe extends Thing{
+public abstract class Shoe extends Thing {
+
     private final ShoeSize size;
 
     public Shoe(String name, ShoeSize size, Color color, double price) {
@@ -26,5 +30,9 @@ public abstract class Shoe extends Thing{
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), size);
+    }
+
+    public String toString() {
+        return String.format("%s (id = %d): цвет='%s', размер='%s', цена='%1.2f'", getName(), getId(), getColor(), getSize(), getPrice());
     }
 }

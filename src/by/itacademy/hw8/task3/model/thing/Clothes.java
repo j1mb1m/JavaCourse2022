@@ -1,8 +1,12 @@
-package by.itacademy.hw8.task3.model;
+package by.itacademy.hw8.task3.model.thing;
+
+import by.itacademy.hw8.task3.model.size.ClothingSize;
+import by.itacademy.hw8.task3.model.Color;
 
 import java.util.Objects;
 
-public abstract class Clothes extends Thing{
+public abstract class Clothes extends Thing {
+
     private final ClothingSize size;
 
     public Clothes(String name, ClothingSize size, Color color, double price) {
@@ -26,5 +30,10 @@ public abstract class Clothes extends Thing{
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), size);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s (id = %d): цвет='%s', размер='%s', цена='%1.2f'", getName(), getId(), getColor(), getSize(), getPrice());
     }
 }

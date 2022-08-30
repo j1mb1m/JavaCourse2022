@@ -1,4 +1,4 @@
-package by.itacademy.hw8.task3.model;
+package by.itacademy.hw8.task3.model.size;
 
 public enum ClothingSize {
     XS,
@@ -7,5 +7,5 @@ public enum ClothingSize {
     L,
     XL,
     XXl,
-    XXXl;
+    XXXl
 }

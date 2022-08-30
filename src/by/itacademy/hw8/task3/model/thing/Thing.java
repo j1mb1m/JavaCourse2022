@@ -1,8 +1,11 @@
-package by.itacademy.hw8.task3.model;
+package by.itacademy.hw8.task3.model.thing;
+
+import by.itacademy.hw8.task3.model.Color;
 
 import java.util.Objects;
 
 public abstract class Thing {
+
     private Color color;
     private static int counter = 1;
     private final String name;
@@ -49,4 +52,5 @@ public abstract class Thing {
     public int hashCode() {
         return Objects.hash(color, name, price);
     }
+
 }

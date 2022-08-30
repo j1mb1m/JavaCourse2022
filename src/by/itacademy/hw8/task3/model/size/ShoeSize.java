@@ -1,4 +1,4 @@
-package by.itacademy.hw8.task3.model;
+package by.itacademy.hw8.task3.model.size;
 
 public enum ShoeSize {
     SIZE36("36"),
