@@ -5,10 +5,10 @@ import by.itacademy.hw8.task3.model.Color;
 
 public class Jeans extends Clothes {
 
-    private final static String type = "Джинсы";
+    private final static String TYPE = "Джинсы";
 
     public Jeans(ClothingSize size, Color color, double price) {
-        super(type, size, color,  price);
+        super(TYPE, size, color,  price);
     }
 
 }

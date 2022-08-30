@@ -5,10 +5,10 @@ import by.itacademy.hw8.task3.model.size.ShoeSize;
 
 public class Boots extends Shoe {
 
-    private final static String type = "Ботинки";
+    private final static String TYPE = "Ботинки";
 
     public Boots(ShoeSize size, Color color, double price) {
-        super(type, size, color,  price);
+        super(TYPE, size, color,  price);
     }
 
 }
