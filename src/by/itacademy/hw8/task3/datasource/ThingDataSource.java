@@ -13,37 +13,37 @@ public class ThingDataSource {
     private final List<Thing> things = new ArrayList<>();
     private final List<Thing> orderedThings = new ArrayList<>();
 
-    private final Color COLOR_BLACK = new Color("Черный");
-    private final Color COLOR_WHITE = new Color("Белый");
-    private final Color COLOR_RED = new Color("Красный");
-    private final Color COLOR_BLUE = new Color("Голубой");
+    private final Color colorBlack = new Color("Черный");
+    private final Color colorWhite = new Color("Белый");
+    private final Color colorRed = new Color("Красный");
+    private final Color colorBlue = new Color("Голубой");
 
     public ThingDataSource() {
         initData();
     }
 
     private void initData() {
-        things.add(new Boots(ShoeSize.SIZE36, COLOR_BLACK, 87.5));
-        things.add(new Boots(ShoeSize.SIZE38, COLOR_RED, 120));
-        things.add(new Dress(ClothingSize.L, COLOR_BLACK, 60));
-        things.add(new Dress(ClothingSize.S, COLOR_BLACK, 60));
-        things.add(new Dress(ClothingSize.M, COLOR_BLACK, 60));
-        things.add(new Dress(ClothingSize.M, COLOR_BLACK, 60));
-        things.add(new Jeans(ClothingSize.L, COLOR_BLUE, 85));
-        things.add(new Jeans(ClothingSize.L, COLOR_BLUE, 85));
-        things.add(new Jeans(ClothingSize.L, COLOR_BLUE, 85));
-        things.add(new Jeans(ClothingSize.L, COLOR_BLUE, 85));
-        things.add(new Jeans(ClothingSize.S, COLOR_BLUE, 85));
-        things.add(new Jeans(ClothingSize.M, COLOR_BLUE, 85));
-        things.add(new Shirt(ClothingSize.L, COLOR_WHITE, 60));
-        things.add(new Shirt(ClothingSize.M, COLOR_WHITE, 60));
-        things.add(new Shirt(ClothingSize.S, COLOR_WHITE, 60));
-        things.add(new Sneakers(ShoeSize.SIZE36, COLOR_WHITE, 124.9));
-        things.add(new Sneakers(ShoeSize.SIZE36, COLOR_WHITE, 124.9));
-        things.add(new Sneakers(ShoeSize.SIZE36, COLOR_WHITE, 124.9));
-        things.add(new Sneakers(ShoeSize.SIZE37, COLOR_WHITE, 124.9));
-        things.add(new Sneakers(ShoeSize.SIZE38, COLOR_WHITE, 124.9));
-        things.add(new Sneakers(ShoeSize.SIZE39, COLOR_WHITE, 124.9));
+        things.add(new Boots(ShoeSize.SIZE36, colorBlack, 87.5));
+        things.add(new Boots(ShoeSize.SIZE38, colorRed, 120));
+        things.add(new Dress(ClothingSize.L, colorBlack, 60));
+        things.add(new Dress(ClothingSize.S, colorBlack, 60));
+        things.add(new Dress(ClothingSize.M, colorBlack, 60));
+        things.add(new Dress(ClothingSize.M, colorBlack, 60));
+        things.add(new Jeans(ClothingSize.L, colorBlue, 85));
+        things.add(new Jeans(ClothingSize.L, colorBlue, 85));
+        things.add(new Jeans(ClothingSize.L, colorBlue, 85));
+        things.add(new Jeans(ClothingSize.L, colorBlue, 85));
+        things.add(new Jeans(ClothingSize.S, colorBlue, 85));
+        things.add(new Jeans(ClothingSize.M, colorBlue, 85));
+        things.add(new Shirt(ClothingSize.L, colorWhite, 60));
+        things.add(new Shirt(ClothingSize.M, colorWhite, 60));
+        things.add(new Shirt(ClothingSize.S, colorWhite, 60));
+        things.add(new Sneakers(ShoeSize.SIZE36, colorWhite, 124.9));
+        things.add(new Sneakers(ShoeSize.SIZE36, colorWhite, 124.9));
+        things.add(new Sneakers(ShoeSize.SIZE36, colorWhite, 124.9));
+        things.add(new Sneakers(ShoeSize.SIZE37, colorWhite, 124.9));
+        things.add(new Sneakers(ShoeSize.SIZE38, colorWhite, 124.9));
+        things.add(new Sneakers(ShoeSize.SIZE39, colorWhite, 124.9));
     }
 
     public List<Thing> getThings() {
