@@ -23,6 +23,10 @@ public abstract class Animal {
         this.price = price;
     }
 
+    public Calendar getDateOfBirth() {
+        return dateOfBirth;
+    }
+
     public String getDateOfBirth(String format){
 
         SimpleDateFormat dateFormat = new SimpleDateFormat(format);
@@ -35,6 +39,10 @@ public abstract class Animal {
 
     public String getName() {
         return name;
+    }
+
+    public String getBreed() {
+        return breed;
     }
 
     @Override

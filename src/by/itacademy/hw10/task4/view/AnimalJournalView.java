@@ -13,7 +13,31 @@ public class AnimalJournalView {
         this.handler = handler;
     }
 
-    public void print(List<Animal> animalList){
+    public void print(List<Animal> animalList) {
+
         animalList.forEach(System.out::println);
+        System.out.println();
+    }
+
+    public void printAvailableAnimals() {
+
+        System.out.println("Для покупки доступны следующие животные: ");
+        print(handler.toList(handler.getJournal().getAnimalMap()));
+
+    }
+
+    public void printSoldAnimals() {
+
+        System.out.println("Для проданы следующие животные: ");
+        print(handler.getJournal().getSoldAnimalList());
+        System.out.println();
+
+    }
+
+    public void printException(Exception e) {
+
+        System.out.println(e.getMessage());
+        System.out.println();
+
     }
 }
