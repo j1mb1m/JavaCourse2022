@@ -1,6 +1,6 @@
 package by.itacademy.hw10.task4.exception;
 
-public class AnimalAlreadyExistsException extends Exception{
+public class AnimalAlreadyExistsException extends AnimalException{
 
     public AnimalAlreadyExistsException(String message) {
         super(message);

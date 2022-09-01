@@ -27,7 +27,7 @@ public abstract class Animal {
         return dateOfBirth;
     }
 
-    public String getDateOfBirth(String format){
+    public String getDateOfBirth(String format) {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat(format);
         return dateFormat.format(dateOfBirth.getTime());
@@ -45,6 +45,14 @@ public abstract class Animal {
         return breed;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public Gender getSex() {
+        return sex;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,13 +68,9 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                ", breed='" + breed + '\'' +
-                ", color='" + color + '\'' +
-                ", dateOfBirth=" + getDateOfBirth("dd.MM.yyyy") +
-                ", sex=" + sex +
-                ", price=" + price +
-                '}';
+
+        return String.format("Животное: имя = %s порода = %s, цвет = %s, дата рождения = %s, пол = %s, цена  = %s",
+                name, breed, color, getDateOfBirth("dd.MM.yyyy"), sex, price);
+
     }
 }

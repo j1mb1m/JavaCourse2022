@@ -11,6 +11,7 @@ import java.util.*;
 
 public class AnimalAccountingJournal {
 
+    //лучше делать не через map, но чисто в рамках эксперимента, почему бы и нет
     private final Map<String, List<Animal>> animalMap = new HashMap<>();
     private final List<Animal> soldAnimalList = new ArrayList<>();
 
