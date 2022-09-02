@@ -10,14 +10,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Calculator.sum(1, 2.5);
-        Calculator.sum(1, 4);
-        Calculator.multiply(1, 2.5);
-        Calculator.multiply(1, 4);
-        Calculator.divide(1, 2.5);
-        Calculator.divide(1, 4);
-        Calculator.subtraction(1, 2.5);
-        Calculator.subtraction(1, 4);
+        System.out.printf("%s + %s = %s%n",1, 2.5,  Calculator.sum(1, 2.5));
+        System.out.printf("%s + %s = %s%n",1, 4,  Calculator.sum(1, 4));
+        System.out.printf("%s * %s = %s%n",1, 2.5,  Calculator.multiply(1, 2.5));
+        System.out.printf("%s * %s = %s%n",1, 4,  Calculator.multiply(1, 4));
+        System.out.printf("%s / %s = %s%n",1, 2.5,  Calculator.divide(1, 2.5));
+        System.out.printf("%s / %s = %s%n",1, 4,  Calculator.divide(1, 4));
+        System.out.printf("%s - %s = %s%n",1, 2.5,  Calculator.subtraction(1, 2.5));
+        System.out.printf("%s - %s = %s%n",1, 4,  Calculator.subtraction(1, 4));
+
     }
 
 }

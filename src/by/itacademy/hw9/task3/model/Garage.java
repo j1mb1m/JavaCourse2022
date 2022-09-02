@@ -5,15 +5,15 @@ import java.util.List;
 
 public class Garage<T extends Vehicle> {
 
-    private final List<T> garage = new ArrayList<>();
+    private final List<T> vehicles = new ArrayList<>();
     private final double area;
 
     public Garage(double area) {
         this.area = area;
     }
 
-    public List<T> getGarage() {
-        return garage;
+    public List<T> getVehicles() {
+        return vehicles;
     }
 
     public double getArea() {
@@ -23,7 +23,7 @@ public class Garage<T extends Vehicle> {
     @Override
     public String toString() {
         return "Garage{" +
-                "garage=" + garage +
+                "garage=" + vehicles +
                 ", area=" + area +
                 '}';
     }
