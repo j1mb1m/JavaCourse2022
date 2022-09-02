@@ -15,7 +15,7 @@ public class RegistrationCommander implements Commander {
         try {
             user = LoginPasswordValidation.run();
         } catch (WrongPasswordException | WrongLoginException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         if (user != null) {
@@ -23,7 +23,7 @@ public class RegistrationCommander implements Commander {
                 UserService userService = new UserService();
                 userService.addUser(user);
             } catch (WrongLoginException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
         }
 

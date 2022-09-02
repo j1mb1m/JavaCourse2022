@@ -17,7 +17,7 @@ public class AuthorizationCommander implements Commander {
             return userService.checkUser(user);
 
         } catch (WrongLoginException | WrongPasswordException | UserNotExistException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         return false;
