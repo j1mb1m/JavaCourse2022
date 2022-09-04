@@ -11,6 +11,7 @@ public class AuthorizationCommander implements Commander {
     @Override
     public boolean execute() {
 
+        boolean isCheckedException = true;
         try {
             User user = LoginPasswordValidation.run();
             UserService userService = new UserService();
@@ -18,8 +19,9 @@ public class AuthorizationCommander implements Commander {
 
         } catch (WrongLoginException | WrongPasswordException | UserNotExistException e) {
             System.out.println(e.getMessage());
-        }
+            isCheckedException = repeat();
+          }
 
-        return false;
+        return isCheckedException;
     }
 }

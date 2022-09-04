@@ -16,6 +16,7 @@ public class RegistrationCommander implements Commander {
             user = LoginPasswordValidation.run();
         } catch (WrongPasswordException | WrongLoginException e) {
             System.out.println(e.getMessage());
+            return repeat();
         }
 
         if (user != null) {
@@ -24,9 +25,10 @@ public class RegistrationCommander implements Commander {
                 userService.addUser(user);
             } catch (WrongLoginException e) {
                 System.out.println(e.getMessage());
+                return repeat();
             }
         }
 
-        return false;
+        return true;
     }
 }

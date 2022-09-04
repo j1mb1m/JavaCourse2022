@@ -14,7 +14,6 @@ public class Main {
         String command;
 
         do {
-            //меню по-хорошему лучше сделать через map, чтобы обойтись без switch
             System.out.println("Welcome to Main menu. Please make your choice and press 'Enter':");
             System.out.println("1: Registration");
             System.out.println("2: Authorisation");
