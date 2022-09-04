@@ -1,15 +1,13 @@
 package by.itacademy.hw10.task4.service;
 
 import by.itacademy.hw10.task4.datasource.AnimalAccountingJournal;
-import by.itacademy.hw10.task4.exception.AnimalAlreadyExistsException;
-import by.itacademy.hw10.task4.exception.AnimalNotExistException;
 import by.itacademy.hw10.task4.model.animal.Animal;
 import by.itacademy.hw10.task4.view.StatusBar;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class AnimalJournalHandlerImpl implements AnimalJournalHandler{
+public class AnimalJournalHandlerImpl implements AnimalJournalHandler {
 
     private final AnimalAccountingJournal journal;
     private final StatusBar statusBar;
@@ -23,42 +21,50 @@ public class AnimalJournalHandlerImpl implements AnimalJournalHandler{
         return journal;
     }
 
-    public void addAnimal(Animal animal) throws AnimalAlreadyExistsException {
+    public boolean addAnimal(Animal animal) {
+
+        statusBar.log(String.format("..попытка регистрации существующего в базе питомца : %s", animal));
+
+        boolean isAdded = false;
 
         if (journal.getAnimalMap().containsKey(animal.getName())) {
             List<Animal> animals = journal.getAnimalMap().get(animal.getName());
             if (animals.contains(animal)) {
-                statusBar.log(String.format("..попытка регистрации существующего в базе питомца : %s", animal));
-                throw new AnimalAlreadyExistsException(String.format("Упс.. Такой питомц уже внесен в базу. %s", animal));
+                statusBar.log(String.format("Упс.. Такой питомец уже внесен в базу. %s", animal));
+                return false;
             } else {
-                animals.add(animal);
+                isAdded = animals.add(animal);
                 journal.getAnimalMap().put(animal.getName(), animals);
             }
         } else {
             List<Animal> animals = new ArrayList<>();
-            animals.add(animal);
+            isAdded = animals.add(animal);
             journal.getAnimalMap().put(animal.getName(), animals);
         }
-        statusBar.log(String.format("..в базе зарегистирован питомец : %s", animal));
 
+        if (isAdded) {
+            statusBar.log(String.format("..в базе зарегистирован питомец : %s", animal));
+        }
+
+        return isAdded;
     }
 
-    public void saleAnimal(Animal animal) throws AnimalNotExistException {
+    public boolean saleAnimal(Animal animal) {
 
         statusBar.log(String.format("..выполняется попытка продажи питомца : %s", animal));
 
         if (!journal.getAnimalMap().containsKey(animal.getName())) {
-            throw new AnimalNotExistException(String.format("Упс.. Такого питомца нет в базе. %s", animal));
+            statusBar.log(String.format("Упс.. Такого питомца нет в базе. %s", animal));
+            return false;
         }
 
         List<Animal> animals = journal.getAnimalMap().get(animal.getName());
         if (!animals.contains(animal)) {
-
-            throw new AnimalNotExistException(String.format("Упс.. Такого питомца нет в базе. %s", animal));
+            statusBar.log(String.format("Упс.. Такого питомца нет в базе. %s", animal));
+            return false;
         }
 
-        animals.remove(animal);
-        journal.getSoldAnimalList().add(animal);
+        boolean isSold = (animals.remove(animal) && journal.getSoldAnimalList().add(animal));
 
         if (animals.size() == 0) {
             //если нет записей по ключу - удалим сам ключ
@@ -68,22 +74,29 @@ public class AnimalJournalHandlerImpl implements AnimalJournalHandler{
             journal.getAnimalMap().put(animal.getName(), animals);
         }
 
-        statusBar.log(String.format("..питомец успешно продан: %s", animal));
+        if (isSold) {
+            statusBar.log(String.format("..питомец успешно продан: %s", animal));
+        }
 
+        return isSold;
     }
 
-    public void returnAnimal(Animal animal) throws AnimalNotExistException, AnimalAlreadyExistsException {
+    public boolean returnAnimal(Animal animal) {
 
         statusBar.log(String.format("..выполняется попытка возврата питомца : %s", animal));
 
         if (!journal.getSoldAnimalList().contains(animal)) {
-            throw new AnimalNotExistException(String.format("Животное не продавалось! Возврат не возможен: %s", animal));
+            statusBar.log(String.format("Животное не продавалось! Возврат не возможен: %s", animal));
+            return false;
         }
 
-        journal.getSoldAnimalList().remove(animal);
-        addAnimal(animal);
+        boolean isReturned = (journal.getSoldAnimalList().remove(animal) && addAnimal(animal));
 
-        statusBar.log(String.format("..оформлен возврат на питомца : %s", animal));
+        if (isReturned) {
+            statusBar.log(String.format("..оформлен возврат на питомца : %s", animal));
+        }
+
+        return isReturned;
     }
 
     public List<Animal> toList(Map<String, List<Animal>> map) {

@@ -1,7 +1,5 @@
 package by.itacademy.hw10.task4.service;
 
-import by.itacademy.hw10.task4.exception.AnimalNotExistException;
-import by.itacademy.hw10.task4.exception.AnimalAlreadyExistsException;
 import by.itacademy.hw10.task4.model.animal.Animal;
 
 import java.util.List;
@@ -9,11 +7,11 @@ import java.util.Map;
 
 public interface AnimalJournalHandler {
 
-    void addAnimal(Animal animal) throws AnimalAlreadyExistsException;
+    boolean addAnimal(Animal animal);
 
-    void saleAnimal(Animal animal) throws AnimalNotExistException;
+    boolean saleAnimal(Animal animal);
 
-    void returnAnimal(Animal animal)throws AnimalNotExistException, AnimalAlreadyExistsException;
+    boolean returnAnimal(Animal animal);
 
     List<Animal> toList(Map<String, List<Animal>> map);
 
