@@ -6,13 +6,7 @@ public class OutputThread extends Thread {
 
     @Override
     public void run() {
-        synchronized ((Integer)count) {
-            for (int i = 0; i < 100; i++) {
-                System.out.printf("%s ", count);
-            }
-            System.out.println();
-            count++;
-        }
+        Counter.print();
     }
 
 }
