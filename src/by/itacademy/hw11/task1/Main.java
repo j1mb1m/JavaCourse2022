@@ -1,7 +1,7 @@
 package by.itacademy.hw11.task1;
 
-import by.itacademy.hw11.task1.service.command.AuthorizationCommander;
-import by.itacademy.hw11.task1.service.command.RegistrationCommander;
+import by.itacademy.hw11.task1.command.AuthorizationCommander;
+import by.itacademy.hw11.task1.command.RegistrationCommander;
 
 import java.util.Scanner;
 

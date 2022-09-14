@@ -1,4 +1,4 @@
-package by.itacademy.hw11.task1.datasource;
+package by.itacademy.hw11.task1.repository;
 
 import by.itacademy.hw11.task1.model.User;
 

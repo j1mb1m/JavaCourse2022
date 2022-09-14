@@ -1,21 +1,22 @@
-package by.itacademy.hw11.task1.service.command;
+package by.itacademy.hw11.task1.command;
 
 import by.itacademy.hw11.task1.exception.UserNotExistException;
 import by.itacademy.hw11.task1.exception.WrongLoginException;
 import by.itacademy.hw11.task1.exception.WrongPasswordException;
 import by.itacademy.hw11.task1.model.User;
-import by.itacademy.hw11.task1.service.LoginPasswordValidation;
-import by.itacademy.hw11.task1.service.UserService;
 
-public class AuthorizationCommander implements Commander {
+public class AuthorizationCommander extends Commander {
+
     @Override
     public boolean execute() {
 
         boolean isCheckedException = true;
+
         try {
-            User user = LoginPasswordValidation.run();
-            UserService userService = new UserService();
-            return userService.checkUser(user);
+            String login = input.enterLogin();
+            String password = input.enterPassword();
+
+            userService.checkUser(new User(login, password));
 
         } catch (WrongLoginException | WrongPasswordException | UserNotExistException e) {
             System.out.println(e.getMessage());

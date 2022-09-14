@@ -7,7 +7,6 @@ import java.util.Objects;
 
 public class User {
 
-    //логин должен быть уникальный
     private final String login;
     private final String password;
 

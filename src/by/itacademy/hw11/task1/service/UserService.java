@@ -1,30 +1,38 @@
 package by.itacademy.hw11.task1.service;
 
-import by.itacademy.hw11.task1.datasource.UserRepository;
 import by.itacademy.hw11.task1.exception.UserNotExistException;
 import by.itacademy.hw11.task1.exception.WrongLoginException;
 import by.itacademy.hw11.task1.exception.WrongPasswordException;
 import by.itacademy.hw11.task1.model.User;
+import by.itacademy.hw11.task1.repository.UserRepository;
 
 public class UserService {
 
-    private final UserRepository users = UserRepository.getInstance();
+    private final UserRepository repository = UserRepository.getInstance();
 
-    public void addUser(final User user) throws WrongLoginException {
-        if (users.getUsers().containsKey(user.getLogin()))
+    public void addUser(final User user) {
+        if (repository.getUsers().containsKey(user.getLogin())) {
             throw new WrongLoginException("ERROR! The login is already occupied!");
-            users.getUsers().put(user.getLogin(), user);
+        }
+        repository.getUsers().put(user.getLogin(), user);
     }
 
-    public boolean checkUser(final User user) throws UserNotExistException, WrongPasswordException {
+    public void checkUser(final User user) {
 
-        if (!users.getUsers().containsKey(user.getLogin()))
+        if (!repository.getUsers().containsKey(user.getLogin())) {
             throw new UserNotExistException("ERROR! The user not found!");
-        User userDB = users.getUsers().get(user.getLogin());
-        if (!userDB.getPassword().equals(user.getPassword()))
+        }
+        User userDB = repository.getUsers().get(user.getLogin());
+        if (!userDB.getPassword().equals(user.getPassword())) {
             throw new WrongPasswordException("ERROR! Password is not correct! The user has a different password!");
+        }
 
-        return true;
+    }
+
+    public boolean checkLogin(final String login) {
+
+        return repository.getUsers().containsKey(login);
+
     }
 
 }
