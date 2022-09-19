@@ -13,8 +13,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        FileHandler.writeFile(FILE_NAME, getByteRandomNumbers(30));
-        printArrayBytes(FileHandler.readFile(FILE_NAME));
+        FileHandler fileHandler = new FileHandler();
+
+        fileHandler.writeFile(FILE_NAME, getByteRandomNumbers(30));
+        printArrayBytes(fileHandler.readFile(FILE_NAME));
 
     }
 
@@ -41,7 +43,6 @@ public class Main {
         for (int i = 0; i < count; i++) {
             int num = random.nextInt(100);
             bytes[i] = (byte) num;
-            //System.out.println(num);
         }
 
         return bytes;

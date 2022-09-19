@@ -11,21 +11,23 @@ import java.util.regex.Pattern;
 public class Main {
 
     private final static String PATTERN_PUNCTUATION_MARKS = "([.,:;!?()\"'\\[\\]])|( - )"; //все знаки, кроме дефиса
+    private final static String DELIMITER_MARKS = " -.,()[]!?;:'\""; //разделители
 
     public static void main(String[] args) {
 
-        FileHandler.writeFile("hw12_task2.txt", getText());
-        String text = FileHandler.readFile("hw12_task2.txt");
+        FileHandler fileHandler = new FileHandler();
+
+        fileHandler.writeFile("hw12_task2.txt", getText());
+        String text = fileHandler.readFile("hw12_task2.txt");
 
         System.out.println("Количество слов : " + getCountWords(text));
         System.out.println("Количество знаков препинания  : " + getCountPunctuationMarks(text));
-
 
     }
 
     public static int getCountWords(String text){
 
-        StringTokenizer stringTokenizer = new StringTokenizer(text, " -.,()[]!?;:'\"");
+        StringTokenizer stringTokenizer = new StringTokenizer(text, DELIMITER_MARKS);
         int countWords = 0;
 
         while (stringTokenizer.hasMoreTokens()) {

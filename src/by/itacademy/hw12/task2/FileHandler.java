@@ -4,7 +4,7 @@ import java.io.*;
 
 public class FileHandler {
 
-    public static void writeFile(String fileName, String text) {
+    public void writeFile(String fileName, String text) {
         try (Writer writer = new FileWriter(fileName)) {
             writer.write(text);
         } catch (IOException e) {
@@ -12,7 +12,7 @@ public class FileHandler {
         }
     }
 
-    public static String readFile(String fileName) {
+    public String readFile(String fileName) {
         StringBuilder stringBuilder = new StringBuilder();
         try (Reader reader = new FileReader(fileName);
              BufferedReader bufferedReader = new BufferedReader(reader)) {

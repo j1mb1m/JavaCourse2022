@@ -13,18 +13,20 @@ import by.itacademy.hw12.task5.logger.FileLogger;
 public class Main {
     public static void main(String[] args) {
 
-        PersonFileHandlerImpl fileHandlerWithLogToConsole = new PersonFileHandlerImpl(new ConsoleLogger(PersonFileHandlerImpl.class));
+        PersonFileHandlerImpl fileHandlerWithLogToConsole
+                = new PersonFileHandlerImpl(new ConsoleLogger(PersonFileHandlerImpl.class));
 
         fileHandlerWithLogToConsole.writeFile("hw12_task4.ser", new PersonDataBase());
         PersonDataBase dataBaseSerialize =  fileHandlerWithLogToConsole.readFile("hw12_task4.ser");
 
         dataBaseSerialize.getPeople().forEach(System.out::println);
 
-        PersonFileHandlerImpl fileHandlerWithLogToFile = new PersonFileHandlerImpl(new FileLogger(PersonFileHandlerImpl.class, "hw12_task4.log"));
+        PersonFileHandlerImpl fileHandlerWithLogToFile
+                = new PersonFileHandlerImpl(new FileLogger(PersonFileHandlerImpl.class, "hw12_task4.log"));
+
         fileHandlerWithLogToFile.writeFile("hw12_task4.ser", new PersonDataBase());
         fileHandlerWithLogToFile.readFile("hw12_task4.ser");
 
-       // dataBaseSerialize.getPeople().forEach(System.out::println);
 
     }
 }

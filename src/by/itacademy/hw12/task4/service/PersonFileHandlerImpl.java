@@ -5,7 +5,7 @@ import by.itacademy.hw12.task5.logger.Logger;
 
 import java.io.*;
 
-public class PersonFileHandlerImpl implements PersonFilehandler {
+public class PersonFileHandlerImpl implements PersonFileHandler {
 
     private final Logger logger;
 
