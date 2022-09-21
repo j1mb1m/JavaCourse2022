@@ -27,79 +27,42 @@ public class Philosopher extends Thread {
         System.out.printf("Философ %s размышляет%n", id);
     }
 
-    public boolean takeForks() {
-        int countFork = 0;
-        synchronized (getLeftFork()) {
-            if (getLeftFork().isAvailable()) {
-                getLeftFork().takeFork();
-                try {
-                    sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                countFork++;
+    public synchronized void takeForks() throws InterruptedException {
 
-
-                synchronized (getRightFork()) {
-                    if (getRightFork().isAvailable()) {
-                        getRightFork().takeFork();
-                        System.out.printf("Философ %s взял вилку %s и %s%n", getId(), getLeftFork().getId(), getRightFork().getId());
-                        countFork++;
-                    } else {
-                        getLeftFork().putFork();
-                        countFork = 0;
-                    }
-                }
-            }
-        }
-
-        return countFork==2;
+        rightFork.takeFork();
+        leftFork.takeFork();
 
     }
 
-    public void putForks() {
-        synchronized (getRightFork()) {
-            getRightFork().putFork();
+    public synchronized void putForks() {
 
-            synchronized (getLeftFork()) {
-                getLeftFork().putFork();
-                System.out.printf("Философ %s пололжил вилки %s и %s%n", getId(), getLeftFork().getId(), getRightFork().getId());
-            }
-        }
-    }
+        rightFork.putFork();
+        leftFork.putFork();
 
-    public Fork getLeftFork() {
-        return leftFork;
-    }
-
-    public Fork getRightFork() {
-        return rightFork;
     }
 
     @Override
     public void run() {
+        boolean isEat = false;
 
-        boolean isNotEat = true;
-
-        while (isNotEat){
-            if (!takeForks()) continue;
+        while (!isEat) {
             try {
-                sleep(500);
+                sleep((int)(Math.random()*500));
+
+                takeForks();
+                eat();
+                sleep(500 + (int) (Math.random() * 1000));
+
+                putForks();
+                sleep((int) (Math.random() * 500));
+
+                think();
+                isEat = true;
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-            isNotEat = false;
-            eat();
-
-            try {
-                sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            putForks();
-            think();
         }
+
     }
 }
