@@ -32,13 +32,13 @@ public class Main {
         return NUMBERS.stream()
                 .min(Comparator.comparingInt(x -> x))
                 .stream().findFirst()
-                .get();
+                .orElse(0);
     }
 
     public static int getMaxNumber() {
         return NUMBERS.stream()
                 .min((x, y) -> y - x)
-                .get();
+                .orElse(0);
     }
 
     public static double getArithmeticMean() {
@@ -46,14 +46,14 @@ public class Main {
         return NUMBERS.stream()
                 .mapToInt((x) -> x)
                 .average()
-                .getAsDouble();
+                .orElse(0);
     }
 
     public static int getMultiplication() {
 
         return NUMBERS.stream()
                 .reduce((x, y) -> x * y)
-                .get();
+                .orElse(0);
     }
 
     public static int getSum() {

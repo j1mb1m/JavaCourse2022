@@ -43,7 +43,7 @@ public class Main {
 
         return WORDS.stream().sorted(comparator)
                 .findFirst()
-                .get();
+                .orElse("");
     }
 
     public static List<String> findStringsWords() {
