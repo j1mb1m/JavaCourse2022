@@ -26,7 +26,7 @@ public class MinCommand implements Command, Runnable{
     public int find() {
         return list.stream()
                 .reduce(Integer::min)
-                .get();
+                .orElse(0);
     }
 
     @Override

@@ -26,7 +26,7 @@ public class MaxCommand implements Command, Runnable{
     public int find() {
         return list.stream()
                 .reduce(Integer::max)
-                .get();
+                .orElse(0);
     }
 
     @Override
