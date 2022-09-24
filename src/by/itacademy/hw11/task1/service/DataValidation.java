@@ -6,11 +6,12 @@ import by.itacademy.hw11.task1.exception.WrongPasswordException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class LoginPasswordValidation {
+public class DataValidation {
 
     private InputFromScanner input = new InputFromScanner();
     private static final String PATTERN_LOGIN = "^(([a-zA-Z0-9]+)(_([a-zA-Z0-9]+))*){5,20}$";// знак подчеркивания д.б. в середине
     private static final String PATTERN_PASSWORD = "^[a-zA-Z0-9_]{8,}$";
+    private static final String PATTERN_DATE_TIME = "^[0-9]{4}-[0-1]{1}$";
 
     public void validateLogin(String login){
         Pattern pattern = Pattern.compile(PATTERN_LOGIN);

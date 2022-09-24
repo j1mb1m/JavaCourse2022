@@ -1,45 +1,34 @@
 package by.itacademy.hw11.task1;
 
-import by.itacademy.hw11.task1.command.AuthorizationCommander;
-import by.itacademy.hw11.task1.command.RegistrationCommander;
+import by.itacademy.hw11.task1.command.Commander;
+import by.itacademy.hw11.task1.commandMenu.MainMenu;
+import by.itacademy.hw11.task1.exception.IncorrectCommandException;
+import by.itacademy.hw11.task1.service.InputFromScanner;
 
-import java.util.Scanner;
+import java.util.Map;
 
 
 public class Main {
+    private static InputFromScanner input = new InputFromScanner();
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        String command;
+        MainMenu mainMenu = new MainMenu();
+        Map<String, Commander> commands = mainMenu.getCommands();
 
-        do {
+        while(true) {
             System.out.println("Welcome to Main menu. Please make your choice and press 'Enter':");
-            System.out.println("1: Registration");
-            System.out.println("2: Authorisation");
-            System.out.println("Q: Exit");
-            command = scanner.nextLine();
+            commands.forEach((s, commander) -> System.out.printf("%s. %s%n", s, commander.getCommandName()));
 
-            switch (command.toUpperCase()) {
-                case "1":
-                    //регистрация
-                    if (new RegistrationCommander().execute())
-                        System.out.println("Registration was successful. User added!!!!!");
-                    break;
-                case "2":
-                    //авторизация
-                    if (new AuthorizationCommander().execute())
-                        System.out.println("Authorization was successful. Congratulate!!!!!");
-                    break;
-                case "Q":
-                    break;
-                default:
-                    System.out.println("Command not recognized, please try again!");
-                    break;
+            String command = input.enterFromScanner().toUpperCase();
+
+            try {
+                mainMenu.executeCommand(command);
             }
-
-        } while (!command.equalsIgnoreCase("Q"));
-
+            catch (IncorrectCommandException e){
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
 

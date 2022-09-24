@@ -7,22 +7,23 @@ import by.itacademy.hw11.task1.model.User;
 
 public class AuthorizationCommander extends Commander {
 
-    @Override
-    public boolean execute() {
+    public AuthorizationCommander() {
+        super("Authorisation");
+    }
 
-        boolean isCheckedException = true;
+    @Override
+    public void execute() {
 
         try {
             String login = input.enterLogin();
             String password = input.enterPassword();
 
             userService.checkUser(new User(login, password));
+            System.out.println("Authorization was successful. Congratulate!!!!!");
 
         } catch (WrongLoginException | WrongPasswordException | UserNotExistException e) {
             System.out.println(e.getMessage());
-            isCheckedException = repeat();
+            repeat();
           }
-
-        return isCheckedException;
     }
 }

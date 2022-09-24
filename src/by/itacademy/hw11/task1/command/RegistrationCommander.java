@@ -6,8 +6,12 @@ import by.itacademy.hw11.task1.model.User;
 
 public class RegistrationCommander extends Commander {
 
+    public RegistrationCommander() {
+        super("Registration");
+    }
+
     @Override
-    public boolean execute() {
+    public void execute() {
 
         try {
             String login = input.enterLogin();
@@ -21,12 +25,13 @@ public class RegistrationCommander extends Commander {
             validation.validatePassword(password);
 
             userService.addUser(new User(login, password));
+            System.out.println("Registration was successful. User added!!!!!");
 
         } catch (WrongPasswordException | WrongLoginException e) {
             System.out.println(e.getMessage());
-            return repeat();
+            repeat();
         }
 
-        return true;
+      //  return true;
     }
 }
