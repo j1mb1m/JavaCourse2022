@@ -8,6 +8,7 @@ public class ExitCommander extends Commander{
 
     @Override
     public void execute() {
+        viewHandler.print("The work is completed");
         System.exit(0);
     }
 }

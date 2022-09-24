@@ -7,9 +7,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class AuthorizationLogCommander extends Commander{
-
-    private final String DATETIME_PATTERN = "yyyyMMdd_HHmmss";
+public class AuthorizationLogCommander extends Commander {
 
     public AuthorizationLogCommander() {
         super("Get authorization information for a period of time");
@@ -18,19 +16,18 @@ public class AuthorizationLogCommander extends Commander{
     @Override
     public void execute() {
 
-        boolean isCheckedException = true;
-
         try {
+            String DATETIME_PATTERN = "yyyyMMdd_HHmmss";
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATETIME_PATTERN);
 
             LocalDateTime dateStart = LocalDateTime.parse(input.enterDate(DATETIME_PATTERN), formatter);
             LocalDateTime dateEnd = LocalDateTime.parse(input.enterDate(DATETIME_PATTERN), formatter);
 
             List<User> logs = userService.getAuthorizationLog(dateStart, dateEnd);
-            logs.stream().forEach(System.out::println);
+            logs.forEach(viewHandler::print);
 
         } catch (DateTimeException e) {
-            System.out.println(e.getMessage());
+            viewHandler.print(e.getMessage());
             repeat();
         }
 

@@ -19,10 +19,10 @@ public class AuthorizationCommander extends Commander {
             String password = input.enterPassword();
 
             userService.checkUser(new User(login, password));
-            System.out.println("Authorization was successful. Congratulate!!!!!");
+            viewHandler.print("Authorization was successful. Congratulate!!!!!");
 
         } catch (WrongLoginException | WrongPasswordException | UserNotExistException e) {
-            System.out.println(e.getMessage());
+            viewHandler.print(e.getMessage());
             repeat();
           }
     }

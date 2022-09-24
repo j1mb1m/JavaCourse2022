@@ -25,13 +25,12 @@ public class RegistrationCommander extends Commander {
             validation.validatePassword(password);
 
             userService.addUser(new User(login, password));
-            System.out.println("Registration was successful. User added!!!!!");
+            viewHandler.print("Registration was successful. User added!!!!!");
 
         } catch (WrongPasswordException | WrongLoginException e) {
-            System.out.println(e.getMessage());
+            viewHandler.print(e.getMessage());
             repeat();
         }
 
-      //  return true;
     }
 }
