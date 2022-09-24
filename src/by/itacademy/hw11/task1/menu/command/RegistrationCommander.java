@@ -1,4 +1,4 @@
-package by.itacademy.hw11.task1.command;
+package by.itacademy.hw11.task1.menu.command;
 
 import by.itacademy.hw11.task1.exception.WrongLoginException;
 import by.itacademy.hw11.task1.exception.WrongPasswordException;

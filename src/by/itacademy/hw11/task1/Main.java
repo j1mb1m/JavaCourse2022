@@ -1,7 +1,7 @@
 package by.itacademy.hw11.task1;
 
-import by.itacademy.hw11.task1.command.Commander;
-import by.itacademy.hw11.task1.commandMenu.MainMenu;
+import by.itacademy.hw11.task1.menu.command.Commander;
+import by.itacademy.hw11.task1.menu.MainMenu;
 import by.itacademy.hw11.task1.exception.IncorrectCommandException;
 import by.itacademy.hw11.task1.service.InputFromScanner;
 

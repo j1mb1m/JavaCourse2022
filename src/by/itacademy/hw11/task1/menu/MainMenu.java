@@ -1,6 +1,6 @@
-package by.itacademy.hw11.task1.commandMenu;
+package by.itacademy.hw11.task1.menu;
 
-import by.itacademy.hw11.task1.command.*;
+import by.itacademy.hw11.task1.menu.command.*;
 import by.itacademy.hw11.task1.exception.IncorrectCommandException;
 
 import java.util.LinkedHashMap;

@@ -1,4 +1,4 @@
-package by.itacademy.hw11.task1.command;
+package by.itacademy.hw11.task1.menu.command;
 
 public class ExitCommander extends Commander{
 
