@@ -1,0 +1,93 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class User{
+-id: int
+-firstName: String
+-lastName: String
+-String telephone
++authorization(): void
++viewAvailableRooms(date: Date): List<Room>
++checkInRoom(oom: Room): void
++checkOutRoom(room: Room): void
++orderAdditionalService(service: Service): void
+}
+
+class Customer{
+-passport: String
++payOrder(): void
++viewProfile(): void
+}
+
+class Repository{
+-rooms: List<Room>
+-services: List<Service>
+-orders: List<Order>
++getRooms(): List<Room>
++getServices(): List<Service>
++getAvailableRooms(date: Date): List<Room>
+}
+
+class Receptionist{
++changeStatusOfRoom(room: Room, status: RoomStatus): void
++changePriceOfRoom(room: Room, price: double): void
++changePriceOfService(room: Room, price: double): void
++addRoom(int): Room
++addService(Service): void
++generateOrder(customer: Customer): Order
+}
+
+
+User <|-- Customer
+User <|-- Receptionist
+
+class Room{
+-int number
+-int countOfBeds
+-RoomStatus status
+-double price
++getNumber(): int
++getCountOfBeds(): int
++getRoomStatus(): RoomStatus
++setRoomStatus(status: RoomStatus): RoomStatus
++getPrice(): double
++setPrice(price: double): double
+}
+
+class Order{
+-id: int
+-customer: Customer
+-receptionist: Receptionist
+-room: Room
+-services: List<Service>
+-totalCost: double
+-dateFrom: Date
+-dateTo: Date
++getOrderInfo(): String
++getOrderNumber(): int
+}
+
+class Service{
+-double price
++setPrice(double): void
+}
+
+enum RoomStatus{
+FREE
+SERVICED
+REPAIRED
+}
+User o-- Repository
+RoomStatus -* Room
+Order "1" o-- "1" Room
+Order "0..*" o-- "0..*" Service
+Receptionist . Customer
+Receptionist "1"--"0.*" Order
+Customer "1"-"0.*" Order
+Repository o--- Room
+Repository o--- Service
+Repository o-- Order
+
+
+
+@enduml
