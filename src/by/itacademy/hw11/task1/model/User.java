@@ -20,7 +20,7 @@ public class User {
         this.lastAuthorizationDate = LocalDateTime.now();
     }
 
-    private String encryptPassword(String password){
+    private String encryptPassword(String password) {
         MessageDigest messageDigest;
         byte[] digest = new byte[0];
 
@@ -36,7 +36,7 @@ public class User {
         BigInteger bigInt = new BigInteger(1, digest);
         StringBuilder md5Hex = new StringBuilder(bigInt.toString(16));
 
-        while( md5Hex.length() < 32 ){
+        while (md5Hex.length() < 32) {
             md5Hex.insert(0, "0");
         }
 
@@ -49,10 +49,6 @@ public class User {
 
     public String getPassword() {
         return password;
-    }
-
-    public LocalDateTime getRegistrationDate() {
-        return registrationDate;
     }
 
     public LocalDateTime getLastAuthorizationDate() {
