@@ -5,17 +5,17 @@ abstract class User{
 -id: int
 -firstName: String
 -lastName: String
--String telephone
+-telephone: String
 +authorization(): void
 +viewAvailableRooms(date: Date): List<Room>
-+checkInRoom(oom: Room): void
-+checkOutRoom(room: Room): void
++checkInRoom(user: User, room: Room): void
++checkOutRoom(user: User, room: Room): void
 +orderAdditionalService(service: Service): void
 }
 
 class Customer{
 -passport: String
-+payOrder(): void
++payOrder(id: int): void
 +viewProfile(): void
 }
 
@@ -77,16 +77,16 @@ FREE
 SERVICED
 REPAIRED
 }
-User o-- Repository
+User ..> Repository
 RoomStatus -* Room
 Order "1" o-- "1" Room
 Order "0..*" o-- "0..*" Service
-Receptionist . Customer
+'Receptionist . Customer
 Receptionist "1"--"0.*" Order
-Customer "1"-"0.*" Order
-Repository o--- Room
-Repository o--- Service
-Repository o-- Order
+Customer "1"--"0.*" Order
+Repository ...> Room
+Repository ..> Service
+Repository ..> Order
 
 
 
