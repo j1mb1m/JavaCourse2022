@@ -3,18 +3,24 @@ package by.itacademy.hw11.task1.model;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class User {
 
     private final String login;
     private final String password;
+    private final LocalDateTime registrationDate;
+    private LocalDateTime lastAuthorizationDate;
 
     public User(String login, String password) {
         this.login = login;
         this.password = encryptPassword(password);
+        this.registrationDate = LocalDateTime.now();
+        this.lastAuthorizationDate = LocalDateTime.now();
     }
-    private String encryptPassword(String password){
+
+    private String encryptPassword(String password) {
         MessageDigest messageDigest;
         byte[] digest = new byte[0];
 
@@ -24,15 +30,13 @@ public class User {
             messageDigest.update(password.getBytes());
             digest = messageDigest.digest();
         } catch (NoSuchAlgorithmException e) {
-            // тут можно обработать ошибку
-            // возникает она если в передаваемый алгоритм в getInstance(,,,) не существует
             e.printStackTrace();
         }
 
         BigInteger bigInt = new BigInteger(1, digest);
         StringBuilder md5Hex = new StringBuilder(bigInt.toString(16));
 
-        while( md5Hex.length() < 32 ){
+        while (md5Hex.length() < 32) {
             md5Hex.insert(0, "0");
         }
 
@@ -45,6 +49,14 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public LocalDateTime getLastAuthorizationDate() {
+        return lastAuthorizationDate;
+    }
+
+    public void setLastAuthorizationDate(LocalDateTime lastAuthorizationDate) {
+        this.lastAuthorizationDate = lastAuthorizationDate;
     }
 
     @Override
@@ -64,6 +76,8 @@ public class User {
     public String toString() {
         return "User{" +
                 "login='" + login + '\'' +
+                ", registrationDate=" + registrationDate +
+                ", lastAuthorizationDate=" + lastAuthorizationDate +
                 '}';
     }
 }

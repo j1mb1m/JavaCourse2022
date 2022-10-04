@@ -1,45 +1,37 @@
 package by.itacademy.hw11.task1;
 
-import by.itacademy.hw11.task1.command.AuthorizationCommander;
-import by.itacademy.hw11.task1.command.RegistrationCommander;
+import by.itacademy.hw11.task1.menu.command.Commander;
+import by.itacademy.hw11.task1.menu.MainMenu;
+import by.itacademy.hw11.task1.exception.IncorrectCommandException;
+import by.itacademy.hw11.task1.service.InputFromScanner;
+import by.itacademy.hw11.task1.view.ViewHandler;
 
-import java.util.Scanner;
+import java.util.Map;
 
 
 public class Main {
 
+
     public static void main(String[] args) {
+        InputFromScanner input = new InputFromScanner();
+        ViewHandler viewHandler = new ViewHandler();
 
-        Scanner scanner = new Scanner(System.in);
-        String command;
+        MainMenu mainMenu = new MainMenu();
+        Map<String, Commander> commands = mainMenu.getCommands();
 
-        do {
-            System.out.println("Welcome to Main menu. Please make your choice and press 'Enter':");
-            System.out.println("1: Registration");
-            System.out.println("2: Authorisation");
-            System.out.println("Q: Exit");
-            command = scanner.nextLine();
+        while(true) {
+            viewHandler.print("Welcome to Main menu. Please make your choice and press 'Enter':");
+            commands.forEach((s, commander) -> viewHandler.print(String.format("%s. %s", s, commander.getCommandName())));
 
-            switch (command.toUpperCase()) {
-                case "1":
-                    //регистрация
-                    if (new RegistrationCommander().execute())
-                        System.out.println("Registration was successful. User added!!!!!");
-                    break;
-                case "2":
-                    //авторизация
-                    if (new AuthorizationCommander().execute())
-                        System.out.println("Authorization was successful. Congratulate!!!!!");
-                    break;
-                case "Q":
-                    break;
-                default:
-                    System.out.println("Command not recognized, please try again!");
-                    break;
+            String command = input.enterFromScanner().toUpperCase();
+
+            try {
+                mainMenu.executeCommand(command);
             }
-
-        } while (!command.equalsIgnoreCase("Q"));
-
+            catch (IncorrectCommandException e){
+                viewHandler.print(e.getMessage());
+            }
+        }
     }
 
 

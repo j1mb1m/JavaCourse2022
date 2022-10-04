@@ -1,8 +1,9 @@
-package by.itacademy.hw11.task1.command;
+package by.itacademy.hw11.task1.menu.command;
 
 import by.itacademy.hw11.task1.service.InputFromScanner;
-import by.itacademy.hw11.task1.service.LoginPasswordValidation;
+import by.itacademy.hw11.task1.service.DataValidation;
 import by.itacademy.hw11.task1.service.UserService;
+import by.itacademy.hw11.task1.view.ViewHandler;
 
 public abstract class Commander {
 
@@ -10,21 +11,30 @@ public abstract class Commander {
     final String NO = "N";
 
     protected InputFromScanner input = new InputFromScanner();
-    protected LoginPasswordValidation validation = new LoginPasswordValidation();
+    protected DataValidation validation = new DataValidation();
     protected UserService userService = new UserService();
+    protected ViewHandler viewHandler = new ViewHandler();
+    protected String commandName;
 
-    abstract boolean execute();
+    public Commander(String commandName) {
+        this.commandName = commandName;
+    }
 
-    public boolean repeat(){
+    public String getCommandName() {
+        return commandName;
+    }
+
+    public void execute(){}
+
+    public void repeat(){
 
         String command = input.enterFromScanner("Try again (Y/N)?");
         while (!(command.equalsIgnoreCase(YES) || command.equalsIgnoreCase(NO))) {
             command = input.enterFromScanner("");
         }
         if (command.equalsIgnoreCase(YES)) {
-            return execute();
+            execute();
         }
-        return false;
     }
 
 }

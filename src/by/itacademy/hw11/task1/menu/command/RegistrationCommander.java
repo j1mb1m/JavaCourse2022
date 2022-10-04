@@ -1,4 +1,4 @@
-package by.itacademy.hw11.task1.command;
+package by.itacademy.hw11.task1.menu.command;
 
 import by.itacademy.hw11.task1.exception.WrongLoginException;
 import by.itacademy.hw11.task1.exception.WrongPasswordException;
@@ -6,8 +6,12 @@ import by.itacademy.hw11.task1.model.User;
 
 public class RegistrationCommander extends Commander {
 
+    public RegistrationCommander() {
+        super("Registration");
+    }
+
     @Override
-    public boolean execute() {
+    public void execute() {
 
         try {
             String login = input.enterLogin();
@@ -21,12 +25,12 @@ public class RegistrationCommander extends Commander {
             validation.validatePassword(password);
 
             userService.addUser(new User(login, password));
+            viewHandler.print("Registration was successful. User added!!!!!");
 
         } catch (WrongPasswordException | WrongLoginException e) {
-            System.out.println(e.getMessage());
-            return repeat();
+            viewHandler.print(e.getMessage());
+            repeat();
         }
 
-        return true;
     }
 }
