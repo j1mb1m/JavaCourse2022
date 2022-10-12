@@ -1,8 +1,8 @@
 package by.itacademy.hw20.task1.service;
 
-import by.itacademy.hw20.task1.exception.UserNotExistException;
-import by.itacademy.hw20.task1.exception.WrongLoginException;
-import by.itacademy.hw20.task1.exception.WrongPasswordException;
+import by.itacademy.hw20.task1.exception.user.UserNotExistException;
+import by.itacademy.hw20.task1.exception.user.WrongLoginException;
+import by.itacademy.hw20.task1.exception.user.WrongPasswordException;
 import by.itacademy.hw20.task1.model.users.User;
 import by.itacademy.hw20.task1.repository.UserRepository;
 

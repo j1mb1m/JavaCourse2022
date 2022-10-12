@@ -1,9 +1,9 @@
 package by.itacademy.hw20.task1.service;
 
 import by.itacademy.hw20.task1.exception.IncorrectDateException;
-import by.itacademy.hw20.task1.exception.IncorrectPaymentSumException;
-import by.itacademy.hw20.task1.exception.WrongLoginException;
-import by.itacademy.hw20.task1.exception.WrongPasswordException;
+import by.itacademy.hw20.task1.exception.payment.IncorrectPaymentSumException;
+import by.itacademy.hw20.task1.exception.user.WrongLoginException;
+import by.itacademy.hw20.task1.exception.user.WrongPasswordException;
 import by.itacademy.hw20.task1.model.hotel.Order;
 
 import java.math.BigDecimal;

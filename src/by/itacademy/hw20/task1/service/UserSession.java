@@ -7,6 +7,7 @@ public final class UserSession {
 
     private static UserSession instance;
     private User currentUser;
+    private boolean endSession = false;
 
     private UserSession() {
     }
@@ -27,7 +28,15 @@ public final class UserSession {
     }
 
     public void cleanUserSession() {
-        currentUser = null;// or null
+        currentUser = null;
+    }
+
+    public void Exit() {
+        this.endSession = true;
+    }
+
+    public boolean isEndSession() {
+        return endSession;
     }
 
     public Menu getMenu() {

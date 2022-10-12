@@ -1,6 +1,6 @@
 package by.itacademy.hw20.task1.menu.command.reception;
 
-import by.itacademy.hw20.task1.exception.RoomNotExistException;
+import by.itacademy.hw20.task1.exception.room.RoomException;
 import by.itacademy.hw20.task1.menu.command.Commander;
 import by.itacademy.hw20.task1.model.hotel.Room;
 
@@ -20,7 +20,7 @@ public class EditRoomPriceCommander extends Commander {
 
             execute(roomNumber);
 
-        } catch (NumberFormatException | RoomNotExistException e) {
+        } catch (NumberFormatException | RoomException e) {
             viewHandler.print(e.getMessage());
             repeat();
         }

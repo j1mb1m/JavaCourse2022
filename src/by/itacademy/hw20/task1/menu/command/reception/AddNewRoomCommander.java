@@ -1,6 +1,6 @@
 package by.itacademy.hw20.task1.menu.command.reception;
 
-import by.itacademy.hw20.task1.exception.RoomExistException;
+import by.itacademy.hw20.task1.exception.room.RoomException;
 import by.itacademy.hw20.task1.menu.command.Commander;
 
 public class AddNewRoomCommander extends Commander {
@@ -27,7 +27,7 @@ public class AddNewRoomCommander extends Commander {
                new EditRoomPriceCommander().execute(roomNumber);
             }
 
-        } catch (NumberFormatException | RoomExistException e) {
+        } catch (NumberFormatException | RoomException e) {
             viewHandler.print(e.getMessage());
             repeat();
         }

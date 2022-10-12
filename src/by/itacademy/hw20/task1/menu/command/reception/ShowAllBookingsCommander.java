@@ -14,7 +14,6 @@ public class ShowAllBookingsCommander extends Commander {
         try {
             viewHandler.showRoomReservationRecords();
 
-
         } catch (NullPointerException | NumberFormatException e) {
             viewHandler.print(e.getMessage());
             repeat();

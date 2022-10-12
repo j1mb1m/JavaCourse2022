@@ -1,11 +1,6 @@
 package by.itacademy.hw20.task1.menu.command.user;
 
-import by.itacademy.hw20.task1.exception.IncorrectDateException;
-import by.itacademy.hw20.task1.exception.RoomAvailabilityException;
-import by.itacademy.hw20.task1.exception.RoomNotExistException;
 import by.itacademy.hw20.task1.menu.command.Commander;
-
-import java.time.DateTimeException;
 
 public class UseServiceCommander extends Commander {
 
@@ -21,8 +16,7 @@ public class UseServiceCommander extends Commander {
 
             orderService.addServiceInOrder(idOrder, idService);
 
-        } catch (NumberFormatException | DateTimeException | IncorrectDateException | RoomNotExistException |
-                 RoomAvailabilityException e) {
+        } catch (NumberFormatException e) {
             viewHandler.print(e.getMessage());
             repeat();
         }

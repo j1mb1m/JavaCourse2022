@@ -1,11 +1,10 @@
 package by.itacademy.hw20.task1.menu.command.user;
 
-import by.itacademy.hw20.task1.service.UserSession;
 import by.itacademy.hw20.task1.exception.IncorrectDateException;
-import by.itacademy.hw20.task1.exception.RoomAvailabilityException;
-import by.itacademy.hw20.task1.exception.RoomNotExistException;
+import by.itacademy.hw20.task1.exception.room.RoomException;
 import by.itacademy.hw20.task1.menu.command.Commander;
 import by.itacademy.hw20.task1.model.hotel.Order;
+import by.itacademy.hw20.task1.service.UserSession;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
@@ -42,8 +41,7 @@ public class CheckInCommander extends Commander {
 
             viewHandler.print("");
 
-        } catch (NumberFormatException | DateTimeException | IncorrectDateException | RoomNotExistException |
-                 RoomAvailabilityException e) {
+        } catch (NumberFormatException | DateTimeException | IncorrectDateException | RoomException e) {
             viewHandler.print(e.getMessage());
             repeat();
         }

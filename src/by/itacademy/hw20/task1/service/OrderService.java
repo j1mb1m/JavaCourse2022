@@ -1,6 +1,6 @@
 package by.itacademy.hw20.task1.service;
 
-import by.itacademy.hw20.task1.exception.OrderNotExistException;
+import by.itacademy.hw20.task1.exception.order.OrderNotExistException;
 import by.itacademy.hw20.task1.model.hotel.Order;
 import by.itacademy.hw20.task1.model.hotel.Payment;
 import by.itacademy.hw20.task1.model.hotel.RoomReservationRecord;
@@ -36,7 +36,8 @@ public class OrderService {
         List<Order> orderList = repository.getOrders().stream()
                 .filter(order -> order.getId() == idOrder)
                 .limit(1)
-                .toList();
+                .collect(Collectors.toList());
+
         if (orderList.isEmpty()){
             throw new OrderNotExistException("ERROR!! The order is not found");
         }

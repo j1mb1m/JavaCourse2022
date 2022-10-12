@@ -1,8 +1,8 @@
 package by.itacademy.hw20.task1.menu.command.user;
 
 import by.itacademy.hw20.task1.service.UserSession;
-import by.itacademy.hw20.task1.exception.IncorrectPaymentSumException;
-import by.itacademy.hw20.task1.exception.OrderNotExistException;
+import by.itacademy.hw20.task1.exception.payment.IncorrectPaymentSumException;
+import by.itacademy.hw20.task1.exception.order.OrderNotExistException;
 import by.itacademy.hw20.task1.menu.command.Commander;
 import by.itacademy.hw20.task1.model.hotel.Order;
 
@@ -22,7 +22,7 @@ public class PayOrderCommander extends Commander {
         if (orders.isEmpty()) {
             viewHandler.print("All orders have been paid");
         } else {
-            viewHandler.printOrder("Orders to be paid: ", orders);
+            viewHandler.printOrder("Orders to be paid: ", orders, false);
         }
         try {
             long idOrder = input.enterNumber("Enter the order id: ");

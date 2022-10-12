@@ -1,8 +1,8 @@
 package by.itacademy.hw20.task1.service;
 
 import by.itacademy.hw20.task1.exception.IncorrectDateException;
-import by.itacademy.hw20.task1.exception.RoomAvailabilityException;
-import by.itacademy.hw20.task1.exception.RoomNotExistException;
+import by.itacademy.hw20.task1.exception.room.RoomAvailabilityException;
+import by.itacademy.hw20.task1.exception.room.RoomNotExistException;
 import by.itacademy.hw20.task1.model.hotel.Order;
 import by.itacademy.hw20.task1.model.hotel.Room;
 import by.itacademy.hw20.task1.model.hotel.RoomReservationRecord;

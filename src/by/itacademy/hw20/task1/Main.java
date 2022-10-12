@@ -23,7 +23,9 @@ public class Main {
         ViewHandler viewHandler = new ViewHandler();
         UserSession userSession = UserSession.getInstance();
 
-        while(true) {
+        boolean exit = false;
+
+        while(!exit) {
             Menu menu = userSession.getMenu();
             Map<String, Commander> commands = menu.getCommands();
 
@@ -38,6 +40,7 @@ public class Main {
             catch (IncorrectCommandException e){
                 viewHandler.print(e.getMessage());
             }
+            exit = userSession.isEndSession();
         }
     }
 

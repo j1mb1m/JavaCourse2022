@@ -1,6 +1,6 @@
 package by.itacademy.hw20.task1.menu.command.reception;
 
-import by.itacademy.hw20.task1.exception.RoomNotExistException;
+import by.itacademy.hw20.task1.exception.ServiceNotExistException;
 import by.itacademy.hw20.task1.menu.command.Commander;
 import by.itacademy.hw20.task1.model.hotel.Service;
 
@@ -19,7 +19,7 @@ public class EditServicePriceCommander extends Commander {
             long idService = Integer.parseInt(input.enterRoomNumber());
             execute(idService);
 
-        } catch (NumberFormatException | RoomNotExistException e) {
+        } catch (NumberFormatException | ServiceNotExistException e) {
             viewHandler.print(e.getMessage());
             repeat();
         }

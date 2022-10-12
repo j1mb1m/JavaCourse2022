@@ -27,28 +27,12 @@ public class ViewHandler {
         print(">> login              " + user.getLogin());
         print(">> registration date  " + user.getRegistrationDate());
         print(">> last authorization " + user.getLastAuthorizationDate());
-        printOrder("All user orders:", orderService.getAllOrders(user));
-        printDetailedOrder("Unpaid user orders:", orderService.getUnpaidOrders(user));
+        printOrder("All user orders:", orderService.getAllOrders(user), false);
+        printOrder("Unpaid user orders:", orderService.getUnpaidOrders(user), true);
         print("");
     }
 
-    public void printOrder(String msg, List<Order> orders) {
-        if (!orders.isEmpty()) {
-            print(msg);
-            orders.forEach(order -> print(
-                    String.format(">> Order №%s from %s: room №%s for the period %s - %s, total cost %s." +
-                                    " To be paid %s$",
-                            order.getId(),
-                            order.getDate(),
-                            order.getRecord().getRoom(),
-                            order.getRecord().getStartBooking(),
-                            order.getRecord().getEndBooking(),
-                            order.getCost(),
-                            order.getToPay())));
-        }
-    }
-
-    public void printDetailedOrder(String msg, List<Order> orders) {
+    public void printOrder(String msg, List<Order> orders, boolean details) {
         if (!orders.isEmpty()) {
             print(msg);
             for (Order order : orders) {
@@ -61,7 +45,7 @@ public class ViewHandler {
                         order.getRecord().getEndBooking(),
                         order.getCost(),
                         order.getToPay()));
-                if (!order.getServices().isEmpty()) {
+                if (!order.getServices().isEmpty() && details) {
                     print("     including:");
                     order.getServices().forEach(service -> print(String.format("     %s %s$", service.getName(), service.getPrice())));
                 }

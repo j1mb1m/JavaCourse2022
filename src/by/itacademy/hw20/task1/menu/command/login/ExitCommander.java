@@ -12,7 +12,6 @@ public class ExitCommander extends Commander {
     @Override
     public void execute() {
         viewHandler.print("The work is completed");
-        UserSession.getInstance().cleanUserSession();
-        System.exit(0);
+        UserSession.getInstance().Exit();
     }
 }
